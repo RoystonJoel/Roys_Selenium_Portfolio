@@ -102,3 +102,4 @@ C:\Users\ROY\RiderProjects\Roys_Selenium_Framework\Roys_Selenium_Framework\obj\D
 C:\Users\ROY\RiderProjects\Roys_Selenium_Framework\Roys_Selenium_Framework\obj\Debug\net9.0\Roys_Selenium_Framework.pdb
 C:\Users\ROY\RiderProjects\Roys_Selenium_Framework\Roys_Selenium_Framework\obj\Debug\net9.0\Roys_Selenium_Framework.genruntimeconfig.cache
 C:\Users\ROY\RiderProjects\Roys_Selenium_Framework\Roys_Selenium_Framework\obj\Debug\net9.0\ref\Roys_Selenium_Framework.dll
+C:\Users\ROY\RiderProjects\Roys_Selenium_Framework\Roys_Selenium_Framework\obj\Debug\net9.0\Roys_Selenium_Framework.sourcelink.json

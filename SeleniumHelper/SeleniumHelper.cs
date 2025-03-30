@@ -39,21 +39,29 @@ namespace Roys_Selenium_Framework
 
         public SendKeysFunctions sendkeys() 
         {
-            return new SendKeysFunctions(_driver,_wait);
+            return new SendKeysFunctions(_driver);
+        }
+
+        public GrabFunctions grabvalue()
+        {
+            return new GrabFunctions(_driver);
         }
       
         public ClickFunctions click()
         {
-            return new ClickFunctions(_driver,_wait);
+            return new ClickFunctions(_driver);
         }
-       
+
+        public string GetURL()
+        {
+            return _driver.Url;
+        }
 
         //Logs in to any homepage you pass into it
         public void Visit(string Url)
         {
             _driver.Navigate().GoToUrl(Url);
         }
-
 
         //closes the drivers windows, and closes the session
         public void Dispose()
