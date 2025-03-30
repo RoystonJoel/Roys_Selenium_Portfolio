@@ -1,0 +1,8 @@
+{
+  //"FSM_HomePage": "***REMOVED***",
+  //"FSM_HomePage": "***REMOVED***",
+  "FSM_HomePage": "h***REMOVED***",
+  "recipient": "SELVARAJ ROY",
+  "subject": "AUTOMATED TEST EMAIL ",
+  "body": "GIVENNAME= {STUDENT.GIVEN_NAME} SURNAME= {STUDENT.SURNAME} YEAR= {STUDENT.CURRENT_YEAR} AGE= {STUDENT.AGE} A1= {STUDENT.A1}"
+}
