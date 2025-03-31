@@ -1,0 +1,5 @@
+﻿#ignored files
+seed/
+obj/
+bin/
+*.suo
