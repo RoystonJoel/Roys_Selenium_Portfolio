@@ -18,7 +18,6 @@ namespace Roys_Selenium_Portfolio
         public ClickFunctions(ChromeDriver driver)
         {
             _driver = driver;
-
         }
 
         //clicks on anything using the elements xpath. Uses wait helpers incase page doesn't respond immediately 
@@ -42,6 +41,6 @@ namespace Roys_Selenium_Portfolio
         {
             _driver.FindElement(By.ClassName(_classname)).Click();
         }
-
+        
     }
 }

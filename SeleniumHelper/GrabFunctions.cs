@@ -17,20 +17,17 @@ public class GrabFunctions
     
     public string ById(string _id)
     {
-        var element = _driver.FindElement(By.Id(_id));
-        return element.Text.ToString();
+        return _driver.FindElement(By.Id(_id)).GetAttribute("value");
     }
 
     public string ByLinkText(string _linktext)
     {
-        var element = _driver.FindElement(By.LinkText(_linktext));
-        return element.Text.ToString();
+        return _driver.FindElement(By.LinkText(_linktext)).GetAttribute("value");
     }
 
     public string ByClassName(string _classname)
     {
-        var element = _driver.FindElement(By.ClassName(_classname));
-        return element.Text.ToString();
+        return _driver.FindElement(By.ClassName(_classname)).GetAttribute("value");
     }
     
 }

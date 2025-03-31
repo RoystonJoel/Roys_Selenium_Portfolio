@@ -91,7 +91,41 @@ namespace Roys_Selenium_Portfolio
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                output.WriteLine(e.StackTrace);
+                helper.Dispose();
+                throw;
+            }
+            
+            helper.Dispose();
+        }
+
+        [Fact]
+        public void incorrect_login_password()
+        {
+            var helper = new SeleniumHelper(driver,wait);
+            helper.Visit("https://katalon-demo-cura.herokuapp.com/");
+            helper.click().ById("btn-make-appointment");
+            //helper.wait().wait_until_visable_byID("btn-make-appointment").click().ById("btn-make-appointment");
+            var usr_name = helper.grabvalue().ByXpath("//input[@placeholder='Username']");
+            helper.sendkeys().ById(usr_name, "txt-username");
+            helper.sendkeys().ById("incorrectpassword", "txt-password");
+            var previousHtml = driver.PageSource;
+            helper.click().ById("btn-login");
+            Thread.Sleep(1000);
+            string currentHtml = driver.PageSource;
+            
+            try
+            {
+                var url = helper.GetURL();
+                url.Should().NotBeEmpty();
+                url.Should().Contain("profile.php#login");
+                url.Should().NotBeNull();
+                currentHtml.Should().NotBe(previousHtml);
+                currentHtml.Should().Contain("Login failed! Please ensure the username and password are valid.");
+            }
+            catch (Exception e)
+            {
+                output.WriteLine(e.StackTrace);
                 helper.Dispose();
                 throw;
             }

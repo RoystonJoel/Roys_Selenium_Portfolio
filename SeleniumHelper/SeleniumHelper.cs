@@ -46,6 +46,11 @@ namespace Roys_Selenium_Portfolio
         {
             return new GrabFunctions(_driver);
         }
+
+        public WaitHelper wait()
+        {
+            return new WaitHelper(_driver, _wait);
+        }
       
         public ClickFunctions click()
         {
