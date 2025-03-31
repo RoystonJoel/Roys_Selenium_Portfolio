@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Roys_Selenium_Framework
+namespace Roys_Selenium_Portfolio
 {
     public class ClickFunctions
     {

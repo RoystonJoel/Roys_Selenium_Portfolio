@@ -11,7 +11,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Xunit.Abstractions;
 
-namespace Roys_Selenium_Framework
+namespace Roys_Selenium_Portfolio
 {
     public class SeleniumHelper
     {

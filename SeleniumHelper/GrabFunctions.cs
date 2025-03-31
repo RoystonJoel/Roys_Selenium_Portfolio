@@ -1,4 +1,4 @@
-﻿namespace Roys_Selenium_Framework;
+﻿namespace Roys_Selenium_Portfolio;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 

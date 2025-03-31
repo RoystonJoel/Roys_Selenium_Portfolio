@@ -1083,11 +1083,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ROY\\RiderProjects\\Roys_Selenium_Framework\\Roys_Selenium_Framework\\Roys_Selenium_Framework.csproj",
-      "projectName": "Roys_Selenium_Framework",
-      "projectPath": "C:\\Users\\ROY\\RiderProjects\\Roys_Selenium_Framework\\Roys_Selenium_Framework\\Roys_Selenium_Framework.csproj",
+      "projectUniqueName": "C:\\Users\\ROY\\RiderProjects\\Roys_Selenium_Portfolio\\Roys_Selenium_Portfolio.csproj",
+      "projectName": "Roys_Selenium_Portfolio",
+      "projectPath": "C:\\Users\\ROY\\RiderProjects\\Roys_Selenium_Portfolio\\Roys_Selenium_Portfolio.csproj",
       "packagesPath": "C:\\Users\\ROY\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ROY\\RiderProjects\\Roys_Selenium_Framework\\Roys_Selenium_Framework\\obj\\",
+      "outputPath": "C:\\Users\\ROY\\RiderProjects\\Roys_Selenium_Portfolio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ROY\\AppData\\Roaming\\NuGet\\NuGet.Config"

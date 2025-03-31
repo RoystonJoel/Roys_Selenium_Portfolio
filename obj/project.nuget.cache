@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1n1KczKNQYw=",
+  "dgSpecHash": "hbom1SsJ9JE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ROY\\RiderProjects\\Roys_Selenium_Framework\\Roys_Selenium_Framework\\Roys_Selenium_Framework.csproj",
+  "projectFilePath": "C:\\Users\\ROY\\RiderProjects\\Roys_Selenium_Portfolio\\Roys_Selenium_Portfolio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ROY\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
     "C:\\Users\\ROY\\.nuget\\packages\\fluentassertions\\8.2.0\\fluentassertions.8.2.0.nupkg.sha512",
