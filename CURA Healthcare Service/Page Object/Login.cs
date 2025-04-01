@@ -17,6 +17,13 @@ namespace Roys_Selenium_Portfolio
             _helper.Visit("https://katalon-demo-cura.herokuapp.com/");
             _helper.click().ById("btn-make-appointment");
         }
+        
+        public void auto_login()
+        {
+            enterusername();
+            enterpassword();
+            submit();
+        }
 
         public void enterusername()
         {
