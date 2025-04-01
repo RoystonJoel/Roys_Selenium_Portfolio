@@ -27,8 +27,14 @@ namespace Roys_Selenium_Portfolio
         [Fact]
         public void Appointment_Success ()
         {
+            var login = new Login(driver);
+            login.auto_login();
+            var appointment = new Appointment(login.GetDriver());
+            appointment.choose_facility("Hongkong CURA Healthcare Center");
+            
             
         }
+        
 
 
     }

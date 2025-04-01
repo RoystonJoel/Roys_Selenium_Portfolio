@@ -13,7 +13,11 @@ public class Appointment
 
     public void choose_facility()
     {
-        
+        _helper.dropdown().FindById("combo_facility").SelectByText("Seoul CURA Healthcare Center");
+    }
+    public void choose_facility(string text)
+    {
+        _helper.dropdown().FindById("combo_facility").SelectByText(text);
     }
 
     public void hospital_readmission()

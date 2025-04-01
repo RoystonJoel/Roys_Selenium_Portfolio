@@ -55,6 +55,11 @@ namespace Roys_Selenium_Portfolio
             return new ClickFunctions(_driver);
         }
 
+        public DropdownFunctions dropdown()
+        {
+            return new DropdownFunctions(_driver);
+        }
+
         public string GetURL()
         {
             return _driver.Url;
@@ -72,7 +77,7 @@ namespace Roys_Selenium_Portfolio
             _driver.Dispose();  
         }
 
-        public ChromeDriver GerDriver()
+        public ChromeDriver GetDriver()
         {
             return _driver;
         }
