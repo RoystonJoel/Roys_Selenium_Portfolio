@@ -54,12 +54,12 @@ namespace Roys_Selenium_Portfolio
         
         public string PageSource()
         {
-            return GerDriver().PageSource;
+            return GetDriver().PageSource;
         }
 
-        public ChromeDriver GerDriver()
+        public ChromeDriver GetDriver()
         {
-            return _helper.GerDriver();
+            return _helper.GetDriver();
         }
 
         public void submit()
