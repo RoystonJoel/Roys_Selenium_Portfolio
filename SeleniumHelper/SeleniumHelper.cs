@@ -16,12 +16,10 @@ namespace Roys_Selenium_Portfolio
     public class SeleniumHelper
     {
         private readonly ChromeDriver _driver;
-        private readonly WebDriverWait _wait;
 
-        public SeleniumHelper(ChromeDriver driver, WebDriverWait wait) 
+        public SeleniumHelper(ChromeDriver driver) 
         {
             _driver = driver;
-            _wait = wait;
         }
 
         //switchs the driver to operate on another tab
@@ -49,7 +47,7 @@ namespace Roys_Selenium_Portfolio
 
         public WaitHelper wait()
         {
-            return new WaitHelper(_driver, _wait);
+            return new WaitHelper(_driver);
         }
       
         public ClickFunctions click()
@@ -72,6 +70,11 @@ namespace Roys_Selenium_Portfolio
         public void Dispose()
         {
             _driver.Dispose();  
+        }
+
+        public ChromeDriver GerDriver()
+        {
+            return _driver;
         }
     }
 }

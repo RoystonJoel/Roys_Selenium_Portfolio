@@ -10,6 +10,7 @@ using System.Xml.Linq;
 using Microsoft.VisualBasic;
 using System.Buffers.Text;
 using OpenQA.Selenium.Internal;
+using Roys_Selenium_Portfolio;
 
 namespace Roys_Selenium_Portfolio
 {
@@ -29,28 +30,22 @@ namespace Roys_Selenium_Portfolio
             this.output = output;
             driver = new ChromeDriver(_options);
             driver.Manage().Window.Maximize(); //fullscreen
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
         }
         
 
         [Fact]
         public void correct_login()
         {
-            var helper = new SeleniumHelper(driver,wait);
-            helper.Visit("https://katalon-demo-cura.herokuapp.com/");
-            helper.click().ById("btn-make-appointment");
-            var usr_name = helper.grabvalue().ByXpath("//input[@placeholder='Username']");
-            var password = helper.grabvalue().ByXpath("//input[@placeholder='Password']");
-            helper.sendkeys().ById(usr_name, "txt-username");
-            helper.sendkeys().ById(password, "txt-password");
-            //output.WriteLine("user name is :" + usr_name);
-            //output.WriteLine("user name is :" + password);
-            helper.click().ById("btn-login");
+            var login = new Login(driver);
+            
+            login.enterusername();
+            login.enterpassword();
+            login.submit();
             Thread.Sleep(1000);
 
             try
             {
-                var url = helper.GetURL();
+                var url = login.GetURL();
                 url.Should().NotBeEmpty();
                 url.Should().Contain("/#appointment");
                 url.Should().NotBe("https://katalon-demo-cura.herokuapp.com/");
@@ -59,30 +54,28 @@ namespace Roys_Selenium_Portfolio
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                helper.Dispose();
+                login.Dispose();
                 throw;
             }
             
-            helper.Dispose();
+            login.Dispose();
         }
 
         [Fact]
         public void incorrect_login_username()
         {
-            var helper = new SeleniumHelper(driver,wait);
-            helper.Visit("https://katalon-demo-cura.herokuapp.com/");
-            helper.click().ById("btn-make-appointment");
-            var password = helper.grabvalue().ByXpath("//input[@placeholder='Password']");
-            helper.sendkeys().ById("notJohnDoe", "txt-username");
-            helper.sendkeys().ById(password, "txt-password");
+            var login = new Login(driver);
+            login.enterusername("notJohnDoe");
+            login.enterpassword();
             var previousHtml = driver.PageSource;
-            helper.click().ById("btn-login");
+            login.submit();
             Thread.Sleep(1000);
-            string currentHtml = driver.PageSource;
+            
+            string currentHtml = login.PageSource();
             
             try
             {
-                var url = helper.GetURL();
+                var url = login.GetURL();
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");
                 url.Should().NotBeNull();
@@ -92,31 +85,28 @@ namespace Roys_Selenium_Portfolio
             catch (Exception e)
             {
                 output.WriteLine(e.StackTrace);
-                helper.Dispose();
+                login.Dispose();
                 throw;
             }
             
-            helper.Dispose();
+            login.Dispose();
         }
 
         [Fact]
         public void incorrect_login_password()
         {
-            var helper = new SeleniumHelper(driver,wait);
-            helper.Visit("https://katalon-demo-cura.herokuapp.com/");
-            helper.click().ById("btn-make-appointment");
-            //helper.wait().wait_until_visable_byID("btn-make-appointment").click().ById("btn-make-appointment");
-            var usr_name = helper.grabvalue().ByXpath("//input[@placeholder='Username']");
-            helper.sendkeys().ById(usr_name, "txt-username");
-            helper.sendkeys().ById("incorrectpassword", "txt-password");
+            var login = new Login(driver);
+            login.enterusername();
+            login.enterpassword("incorrectpassword");
             var previousHtml = driver.PageSource;
-            helper.click().ById("btn-login");
+            login.submit();
             Thread.Sleep(1000);
-            string currentHtml = driver.PageSource;
+            
+            string currentHtml = login.PageSource();
             
             try
             {
-                var url = helper.GetURL();
+                var url = login.GetURL();
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");
                 url.Should().NotBeNull();
@@ -126,11 +116,11 @@ namespace Roys_Selenium_Portfolio
             catch (Exception e)
             {
                 output.WriteLine(e.StackTrace);
-                helper.Dispose();
+                login.Dispose();
                 throw;
             }
             
-            helper.Dispose();
+            login.Dispose();
         }
     }
 }
