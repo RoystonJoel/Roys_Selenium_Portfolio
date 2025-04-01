@@ -3,3 +3,6 @@ seed/
 obj/
 bin/
 *.suo
+idea/
+Folder.DotSettings.user
+Roys_Selenium_Portfolio
