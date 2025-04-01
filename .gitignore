@@ -3,6 +3,10 @@ seed/
 obj/
 bin/
 *.suo
-idea/
+*.exe
+*.dll
+*.pdb
+*.user
+*.userosscache
+*.sln.docstates
 Folder.DotSettings.user
-Roys_Selenium_Portfolio
