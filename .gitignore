@@ -10,3 +10,20 @@ bin/
 *.userosscache
 *.sln.docstates
 Folder.DotSettings.user
+
+# Visual Studio files
+.vs/
+
+# NuGet packages
+packages/
+
+# Test results
+TestResults/
+
+# Temporary files
+*.tmp
+*.log
+
+#OS generated files
+[Tt]humbs.db
+*.DS_Store
