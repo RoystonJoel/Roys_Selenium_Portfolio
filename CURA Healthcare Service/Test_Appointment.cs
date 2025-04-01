@@ -25,7 +25,7 @@ namespace Roys_Selenium_Portfolio
         }
 
         [Fact]
-        public void correct_login()
+        public void Appointment_Success ()
         {
             
         }
