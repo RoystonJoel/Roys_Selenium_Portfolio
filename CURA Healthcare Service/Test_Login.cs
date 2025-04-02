@@ -45,7 +45,7 @@ namespace Roys_Selenium_Portfolio
 
             try
             {
-                var url = login.GetURL();
+                var url = login.GetHelper().GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("/#appointment");
                 url.Should().NotBe("https://katalon-demo-cura.herokuapp.com/");
@@ -71,11 +71,11 @@ namespace Roys_Selenium_Portfolio
             login.submit();
             Thread.Sleep(1000);
             
-            string currentHtml = login.PageSource();
+            string currentHtml = login.GetHelper().GetDriver().PageSource;
             
             try
             {
-                var url = login.GetURL();
+                var url = login.GetHelper().GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");
                 url.Should().NotBeNull();
@@ -102,11 +102,11 @@ namespace Roys_Selenium_Portfolio
             login.submit();
             Thread.Sleep(1000);
             
-            string currentHtml = login.PageSource();
+            string currentHtml = login.GetHelper().GetDriver().PageSource;
             
             try
             {
-                var url = login.GetURL();
+                var url = login.GetHelper().GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");
                 url.Should().NotBeNull();
