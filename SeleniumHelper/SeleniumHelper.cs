@@ -55,9 +55,9 @@ namespace Roys_Selenium_Portfolio
             return new ClickFunctions(_driver);
         }
 
-        public string GetURL()
+        public DropdownFunctions dropdown()
         {
-            return _driver.Url;
+            return new DropdownFunctions(_driver);
         }
 
         //Logs in to any homepage you pass into it
@@ -72,7 +72,7 @@ namespace Roys_Selenium_Portfolio
             _driver.Dispose();  
         }
 
-        public ChromeDriver GerDriver()
+        public ChromeDriver GetDriver()
         {
             return _driver;
         }

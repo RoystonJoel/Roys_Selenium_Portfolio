@@ -46,20 +46,10 @@ namespace Roys_Selenium_Portfolio
         {
             _helper.sendkeys().ById(password, "txt-password");
         }
-
-        public string GetURL()
-        {
-            return _helper.GetURL();
-        }
         
-        public string PageSource()
+        public SeleniumHelper GetHelper()
         {
-            return GerDriver().PageSource;
-        }
-
-        public ChromeDriver GerDriver()
-        {
-            return _helper.GerDriver();
+            return _helper;
         }
 
         public void submit()
