@@ -65,6 +65,11 @@ namespace Roys_Selenium_Portfolio
             return new DropdownFunctions(_driver);
         }
 
+        public IsSelected isselected()
+        {
+            return new IsSelected(_driver);
+        }
+
         //Logs in to any homepage you pass into it
         public void Visit(string Url)
         {
