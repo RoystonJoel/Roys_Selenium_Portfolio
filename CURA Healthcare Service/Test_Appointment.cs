@@ -30,10 +30,14 @@ namespace Roys_Selenium_Portfolio
         {
             var login = new Login(driver);
             login.auto_login();
-            var appointment = new Appointment(login.GetDriver());
+            var appointment = new Appointment(login.GetHelper().GetDriver());
+            appointment.GetHelper().wait().wait_until_visable_byID("combo_facility");
             appointment.choose_facility("Hongkong CURA Healthcare Center");
-            
-            
+            appointment.hospital_readmission();
+            appointment.healthcare_Program();
+            appointment.visit_date();
+            appointment.comment("Test comment");
+            appointment.book_appointment();
         }
         
 
