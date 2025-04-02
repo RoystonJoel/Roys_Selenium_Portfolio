@@ -19,6 +19,7 @@ namespace Roys_Selenium_Portfolio
         {
             _options = new ChromeOptions();
             //_options.AddArgument("--headless");
+            _options.AddUserProfilePreference("profile.password_manager_leak_detection", false);
             this.output = output;
             driver = new ChromeDriver(_options);
             driver.Manage().Window.Maximize(); //fullscreen
