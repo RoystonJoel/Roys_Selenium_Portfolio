@@ -15,9 +15,16 @@ public class AppointmentConfirmation
         return _helper.grabtext().ById("facility");
     }
     
-    public string hospital_readmission()
+    public bool hospital_readmission()
     {
-        return _helper.grabtext().ById("hospital_readmission");
+        if (_helper.grabtext().ById("hospital_readmission").ToLower() == "yes")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     public string program()
