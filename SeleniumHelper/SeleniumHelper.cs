@@ -40,6 +40,11 @@ namespace Roys_Selenium_Portfolio
             return new SendKeysFunctions(_driver);
         }
 
+        public GrabText grabtext()
+        {
+            return new GrabText(_driver);
+        }
+
         public GrabFunctions grabvalue()
         {
             return new GrabFunctions(_driver);
