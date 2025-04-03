@@ -1,7 +1,7 @@
 ﻿namespace Roys_Selenium_Portfolio;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using SeleniumExtras.WaitHelpers;
 
 public class WaitHelper
 {
@@ -13,10 +13,25 @@ public class WaitHelper
         _driver = driver;
         _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
     }
-
-    public SeleniumHelper wait_until_visable_byID(string _id)
+    
+    public IWebElement WaitUntilVisible(By by)
     {
-        _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id(_id)));
-        return new SeleniumHelper(_driver);
+        return _wait.Until(ExpectedConditions.ElementIsVisible(by));
     }
+
+    public IWebElement WaitUntilClickable(By by)
+    {
+        return _wait.Until(ExpectedConditions.ElementToBeClickable(by));
+    }
+
+    public bool WaitUntilTextToBePresentInElement(By by, string text)
+    {
+        return _wait.Until(ExpectedConditions.TextToBePresentInElementLocated(by, text));
+    }
+
+    public bool WaitUntilUrlContains(string url)
+    {
+        return _wait.Until(ExpectedConditions.UrlContains(url));
+    }
+    
 }
