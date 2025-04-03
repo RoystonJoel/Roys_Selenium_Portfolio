@@ -23,23 +23,23 @@ namespace Roys_Selenium_Portfolio
         //clicks on anything using the elements xpath. Uses wait helpers incase page doesn't respond immediately 
         public void ByXpath(string _xpath)
         {
-            _driver.FindElement(By.XPath(_xpath)).Click();
+            _elementInteraction.Click(By.XPath(_xpath));
         }
 
         //clicks on anything that has an ID on it. Uses wait helpers incase page doesn't respond immediately
         public void ById(string _id)
         {
-            _driver.FindElement(By.Id(_id)).Click();
+            _elementInteraction.Click(By.Id(_id));
         }
 
         public void ByLinkText(string _linktext) 
         {
-            _driver.FindElement(By.LinkText(_linktext)).Click();
+            _elementInteraction.Click(By.LinkText(_linktext));
         }
 
         public void ByClassName(string _classname)
         {
-            _driver.FindElement(By.ClassName(_classname)).Click();
+            _elementInteraction.Click(By.ClassName(_classname));
         }
         
     }

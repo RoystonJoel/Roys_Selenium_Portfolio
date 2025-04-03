@@ -4,15 +4,15 @@ using OpenQA.Selenium.Chrome;
 
 public class IsSelected
 {
-    private readonly ChromeDriver _driver;
+    private readonly ElementInteraction   _elementInteraction;
     
     public IsSelected(IWebDriver driver)
     {
-        _driver = driver;
+        _elementInteraction = new ElementInteraction(driver);
     }
 
     public bool IsSelectedByid(string id)
     {
-        return _driver.FindElement(By.Id(id)).Selected;
+        return _elementInteraction.IsSelected(By.Id(id));
     }
 }
