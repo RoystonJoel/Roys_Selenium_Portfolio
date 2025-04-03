@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace Roys_Selenium_Portfolio
 {
-    public class ClickFunctions
+    public class Click
     {
-        private readonly ChromeDriver _driver;
+        private readonly ElementInteraction   _elementInteraction;
 
 
         public Click(IWebDriver  driver)
         {
-            _driver = driver;
+            _elementInteraction = new ElementInteraction(driver);
         }
 
         //clicks on anything using the elements xpath. Uses wait helpers incase page doesn't respond immediately 

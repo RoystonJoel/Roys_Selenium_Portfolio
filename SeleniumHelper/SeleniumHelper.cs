@@ -40,29 +40,29 @@ namespace Roys_Selenium_Portfolio
             return new SendKeysFunctions(_driver);
         }
 
-        public GrabText grabtext()
+        public GetText grabtext()
         {
-            return new GrabText(_driver);
+            return new GetText(_driver);
         }
 
-        public GrabFunctions grabvalue()
+        public GetAttribute GetAttribute()
         {
-            return new GrabFunctions(_driver);
+            return new GetAttribute(_driver);
         }
 
-        public WaitHelper wait()
+        public Wait wait()
         {
-            return new WaitHelper(_driver);
+            return new Wait(_driver);
         }
       
-        public ClickFunctions click()
+        public Click click()
         {
-            return new ClickFunctions(_driver);
+            return new Click(_driver);
         }
 
-        public DropdownFunctions dropdown()
+        public Dropdown dropdown()
         {
-            return new DropdownFunctions(_driver);
+            return new Dropdown(_driver);
         }
 
         public IsSelected isselected()

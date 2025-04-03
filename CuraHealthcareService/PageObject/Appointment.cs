@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace Roys_Selenium_Portfolio;
 
@@ -13,11 +14,11 @@ public class Appointment : Page
 
     public void choose_facility()
     {
-        _helper.dropdown().FindById("combo_facility").SelectByText("Seoul CURA Healthcare Center");
+        _helper.dropdown().ById("combo_facility").SelectByText("Seoul CURA Healthcare Center");
     }
     public void choose_facility(string text)
     {
-        _helper.dropdown().FindById("combo_facility").SelectByText(text);
+        _helper.dropdown().ById("combo_facility").SelectByText(text);
     }
 
     public void hospital_readmission(bool selected)

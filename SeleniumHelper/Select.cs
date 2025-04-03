@@ -1,11 +1,11 @@
 ﻿namespace Roys_Selenium_Portfolio;
 using OpenQA.Selenium.Support.UI;
 
-public class SelectFunctions
+public class Select
 {
     private readonly SelectElement _selectElement;
     
-    public SelectFunctions(SelectElement selectElement)
+    public Select(SelectElement selectElement)
     {
         _selectElement = selectElement;
     }
