@@ -1,11 +1,11 @@
 ﻿namespace Roys_Selenium_Portfolio;
 using OpenQA.Selenium.Chrome;
 
-public class AppointmentConfirmation
+public class AppointmentConfirmation : Page
 {
     private readonly SeleniumHelper _helper;
 
-    public AppointmentConfirmation(ChromeDriver driver)
+    public AppointmentConfirmation(ChromeDriver driver) : base(driver)
     {
         _helper = new SeleniumHelper(driver);
     }
@@ -45,9 +45,5 @@ public class AppointmentConfirmation
     public SeleniumHelper GetHelper()
     {
         return _helper;
-    }
-    public void Dispose()
-    {
-        _helper.Dispose();
     }
 }

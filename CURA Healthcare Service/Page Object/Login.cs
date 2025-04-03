@@ -6,12 +6,12 @@ using Xunit.Abstractions;
 
 namespace Roys_Selenium_Portfolio
 {
-    public class Login
+    public class Login : Page
     {
         private readonly SeleniumHelper _helper;
 
 
-        public Login(ChromeDriver driver)
+        public Login(ChromeDriver driver) : base(driver)
         {
             _helper = new SeleniumHelper(driver);
             _helper.Visit("https://katalon-demo-cura.herokuapp.com/");
@@ -46,21 +46,10 @@ namespace Roys_Selenium_Portfolio
         {
             _helper.sendkeys().ById(password, "txt-password");
         }
-        
-        public SeleniumHelper GetHelper()
-        {
-            return _helper;
-        }
 
         public void submit()
         {
             _helper.click().ById("btn-login");
         }
-
-        public void Dispose()
-        {
-            _helper.Dispose();
-        }
-
     }
 }

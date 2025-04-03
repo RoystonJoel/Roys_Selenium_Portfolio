@@ -2,11 +2,11 @@
 
 namespace Roys_Selenium_Portfolio;
 
-public class Appointment
+public class Appointment : Page
 {
     private readonly SeleniumHelper _helper;
 
-    public Appointment(ChromeDriver driver)
+    public Appointment(ChromeDriver driver) : base(driver)
     {
         _helper = new SeleniumHelper(driver);
     }
@@ -69,10 +69,5 @@ public class Appointment
     public void book_appointment()
     {
         _helper.click().ById("btn-book-appointment");
-    }
-    
-    public SeleniumHelper GetHelper()
-    {
-        return _helper;
     }
 }
