@@ -25,7 +25,7 @@ namespace Roys_Selenium_Portfolio
             var login = new Login(driver);
             login.auto_login();
             var appointment = new Appointment(login.GetHelper().GetDriver());
-            appointment.GetHelper().wait().wait_until_visable_byID("combo_facility");
+            appointment.wait().wait_until_visable_byID("combo_facility");
             appointment.choose_facility(facility);
             appointment.hospital_readmission(hospital_readmission);
             appointment.healthcare_Program(healthcare_Program);
@@ -34,7 +34,7 @@ namespace Roys_Selenium_Portfolio
             string previousHtml = login.GetHelper().GetDriver().PageSource;
             appointment.book_appointment();
             var appointment_confirmation = new AppointmentConfirmation(appointment.GetHelper().GetDriver());
-            appointment.GetHelper().wait().wait_until_visable_byID("summary");
+            appointment.wait().wait_until_visable_byID("summary");
             string currentHtml = login.GetHelper().GetDriver().PageSource;
             
             try
