@@ -7,22 +7,11 @@ using Xunit.Abstractions;
 namespace Roys_Selenium_Portfolio
 {
     
-    public class Test_Appointment
+    public class Test_Appointment : Test
     {
-        private readonly ITestOutputHelper output;
-        private readonly ChromeOptions _options;
-        private readonly ChromeDriver driver;
-        private readonly WebDriverWait wait;
-        private readonly string[] scopes;
         
-        public Test_Appointment(ITestOutputHelper output)
+        public Test_Appointment(ITestOutputHelper output) : base(output)
         {
-            _options = new ChromeOptions();
-            //_options.AddArgument("--headless");
-            _options.AddUserProfilePreference("profile.password_manager_leak_detection", false);
-            this.output = output;
-            driver = new ChromeDriver(_options);
-            driver.Manage().Window.Maximize(); //fullscreen
         }
 
         [Fact]
@@ -65,10 +54,10 @@ namespace Roys_Selenium_Portfolio
             catch (Exception e)
             {
                 Console.WriteLine(e.StackTrace);
-                appointment_confirmation.Dispose();
+                Dispose();
                 throw;
             }
-            appointment_confirmation.Dispose();
+            Dispose();
         }
         
         

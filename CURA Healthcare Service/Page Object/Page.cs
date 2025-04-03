@@ -15,9 +15,4 @@ public class Page
     {
         return _helper;
     }
-    
-    public void Dispose()
-    {
-        _helper.Dispose();
-    }
 }

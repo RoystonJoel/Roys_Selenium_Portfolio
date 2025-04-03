@@ -14,22 +14,11 @@ using Roys_Selenium_Portfolio;
 
 namespace Roys_Selenium_Portfolio
 {
-    public class Test_Login
+    public class Test_Login : Test
     {
-        private readonly ITestOutputHelper output;
-        private readonly ChromeOptions _options;
-        private readonly ChromeDriver driver;
-        private readonly WebDriverWait wait;
-        private readonly string[] scopes;
-        
 
-        public Test_Login(ITestOutputHelper output)
+        public Test_Login(ITestOutputHelper output) : base(output)
         {
-            _options = new ChromeOptions();
-            //_options.AddArgument("--headless");
-            this.output = output;
-            driver = new ChromeDriver(_options);
-            driver.Manage().Window.Maximize(); //fullscreen
         }
         
 
@@ -54,11 +43,11 @@ namespace Roys_Selenium_Portfolio
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                login.Dispose();
+                Dispose();
                 throw;
             }
             
-            login.Dispose();
+            Dispose();
         }
 
         [Fact]
@@ -85,11 +74,11 @@ namespace Roys_Selenium_Portfolio
             catch (Exception e)
             {
                 output.WriteLine(e.StackTrace);
-                login.Dispose();
+                Dispose();
                 throw;
             }
             
-            login.Dispose();
+            Dispose();
         }
 
         [Fact]
@@ -116,11 +105,11 @@ namespace Roys_Selenium_Portfolio
             catch (Exception e)
             {
                 output.WriteLine(e.StackTrace);
-                login.Dispose();
+                Dispose();
                 throw;
             }
             
-            login.Dispose();
+            Dispose();
         }
     }
 }
