@@ -5,7 +5,6 @@ using OpenQA.Selenium.Chrome;
 
 public class WaitHelper
 {
-    private readonly ChromeDriver _driver;
     private readonly WebDriverWait _wait;
     private readonly IWebDriver _driver;
 
