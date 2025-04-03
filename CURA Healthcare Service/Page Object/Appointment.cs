@@ -20,9 +20,23 @@ public class Appointment
         _helper.dropdown().FindById("combo_facility").SelectByText(text);
     }
 
-    public void hospital_readmission()
+    public void hospital_readmission(bool selected)
     {
-        _helper.click().ById("chk_hospotal_readmission");
+        if (selected)
+        {
+            if (!_helper.isselected().IsSelectedByid("chk_hospotal_readmission"))
+            {
+                _helper.click().ById("chk_hospotal_readmission");
+            }
+        }
+        else
+        {
+            if (_helper.isselected().IsSelectedByid("chk_hospotal_readmission"))
+            {
+                _helper.click().ById("chk_hospotal_readmission");
+            }
+        }
+        
     }
     
     public void healthcare_Program()

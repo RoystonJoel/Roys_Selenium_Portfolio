@@ -40,6 +40,11 @@ namespace Roys_Selenium_Portfolio
             return new SendKeysFunctions(_driver);
         }
 
+        public GrabText grabtext()
+        {
+            return new GrabText(_driver);
+        }
+
         public GrabFunctions grabvalue()
         {
             return new GrabFunctions(_driver);
@@ -58,6 +63,11 @@ namespace Roys_Selenium_Portfolio
         public DropdownFunctions dropdown()
         {
             return new DropdownFunctions(_driver);
+        }
+
+        public IsSelected isselected()
+        {
+            return new IsSelected(_driver);
         }
 
         //Logs in to any homepage you pass into it
