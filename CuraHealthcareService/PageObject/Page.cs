@@ -6,7 +6,7 @@ public class Page
 {
     private readonly SeleniumHelper _helper;
 
-    public Page(ChromeDriver driver)
+    public Page(IWebDriver driver)
     {
         _helper = new SeleniumHelper(driver);
     }

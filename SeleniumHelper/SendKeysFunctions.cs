@@ -15,7 +15,7 @@ namespace Roys_Selenium_Portfolio
 
         private readonly ChromeDriver _driver;
 
-        public SendKeysFunctions(ChromeDriver driver)
+        public SendKeysFunctions(IWebDriver driver)
         {
             _driver = driver;
         }

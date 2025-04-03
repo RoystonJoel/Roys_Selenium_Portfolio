@@ -5,7 +5,7 @@ public class AppointmentConfirmation : Page
 {
     private readonly SeleniumHelper _helper;
 
-    public AppointmentConfirmation(ChromeDriver driver) : base(driver)
+    public AppointmentConfirmation(IWebDriver driver) : base(driver)
     {
         _helper = new SeleniumHelper(driver);
     }

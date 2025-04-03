@@ -15,9 +15,9 @@ namespace Roys_Selenium_Portfolio
 {
     public class SeleniumHelper
     {
-        private readonly ChromeDriver _driver;
+        private readonly IWebDriver _driver;
 
-        public SeleniumHelper(ChromeDriver driver) 
+        public SeleniumHelper(IWebDriver driver) 
         {
             _driver = driver;
         }
@@ -82,7 +82,7 @@ namespace Roys_Selenium_Portfolio
             _driver.Dispose();  
         }
 
-        public ChromeDriver GetDriver()
+        public IWebDriver GetDriver()
         {
             return _driver;
         }

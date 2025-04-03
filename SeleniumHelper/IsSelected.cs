@@ -6,7 +6,7 @@ public class IsSelected
 {
     private readonly ChromeDriver _driver;
     
-    public IsSelected(ChromeDriver driver)
+    public IsSelected(IWebDriver driver)
     {
         _driver = driver;
     }

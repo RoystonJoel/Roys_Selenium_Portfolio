@@ -11,7 +11,7 @@ namespace Roys_Selenium_Portfolio
         private readonly SeleniumHelper _helper;
 
 
-        public Login(ChromeDriver driver) : base(driver)
+        public Login(IWebDriver driver) : base(driver)
         {
             _helper = new SeleniumHelper(driver);
             _helper.Visit("https://katalon-demo-cura.herokuapp.com/");

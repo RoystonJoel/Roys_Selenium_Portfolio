@@ -6,7 +6,7 @@ public class Appointment : Page
 {
     private readonly SeleniumHelper _helper;
 
-    public Appointment(ChromeDriver driver) : base(driver)
+    public Appointment(IWebDriver driver) : base(driver)
     {
         _helper = new SeleniumHelper(driver);
     }

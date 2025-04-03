@@ -7,8 +7,9 @@ public class WaitHelper
 {
     private readonly ChromeDriver _driver;
     private readonly WebDriverWait _wait;
-    
-    public WaitHelper(ChromeDriver driver)
+    private readonly IWebDriver _driver;
+
+    public WaitHelper(IWebDriver driver)
     {
         _driver = driver;
         _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));

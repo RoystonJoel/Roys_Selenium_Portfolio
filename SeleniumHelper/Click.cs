@@ -15,7 +15,7 @@ namespace Roys_Selenium_Portfolio
         private readonly ChromeDriver _driver;
 
 
-        public ClickFunctions(ChromeDriver driver)
+        public Click(IWebDriver  driver)
         {
             _driver = driver;
         }
