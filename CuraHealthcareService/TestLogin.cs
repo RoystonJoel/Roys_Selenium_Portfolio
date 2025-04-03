@@ -14,10 +14,10 @@ using Roys_Selenium_Portfolio;
 
 namespace Roys_Selenium_Portfolio
 {
-    public class Test_Login : Test
+    public class TestLogin : Test
     {
 
-        public Test_Login(ITestOutputHelper output) : base(output)
+        public TestLogin(ITestOutputHelper output) : base(output)
         {
         }
         

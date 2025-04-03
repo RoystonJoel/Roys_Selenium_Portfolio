@@ -27,7 +27,7 @@ namespace Roys_Selenium_Portfolio
 
         public void enterusername()
         {
-            var usr_name = _helper.grabvalue().ByXpath("//input[@placeholder='Username']");
+            string usr_name = _helper.GetAttribute().ByXpath("//input[@placeholder='Username']","value");
             _helper.sendkeys().ById(usr_name, "txt-username");
         }
 
@@ -38,7 +38,7 @@ namespace Roys_Selenium_Portfolio
 
         public void enterpassword()
         {
-            var password = _helper.grabvalue().ByXpath("//input[@placeholder='Password']");
+            string password = _helper.GetAttribute().ByXpath("//input[@placeholder='Password']","value");
             _helper.sendkeys().ById(password, "txt-password");
         }
 

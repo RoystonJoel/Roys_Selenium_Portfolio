@@ -7,10 +7,10 @@ using Xunit.Abstractions;
 namespace Roys_Selenium_Portfolio
 {
     
-    public class Test_Appointment : Test
+    public class TestAppointment : Test
     {
         
-        public Test_Appointment(ITestOutputHelper output) : base(output)
+        public TestAppointment(ITestOutputHelper output) : base(output)
         {
         }
 

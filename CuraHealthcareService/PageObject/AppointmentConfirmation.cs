@@ -1,5 +1,8 @@
-﻿namespace Roys_Selenium_Portfolio;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+
+namespace Roys_Selenium_Portfolio;
+
 
 public class AppointmentConfirmation : Page
 {
