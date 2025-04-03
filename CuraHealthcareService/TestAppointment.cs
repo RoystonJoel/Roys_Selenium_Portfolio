@@ -17,28 +17,29 @@ namespace Roys_Selenium_Portfolio
         [Fact]
         public void Appointment_Success ()
         {
-            string facility = "Hongkong CURA Healthcare Center";
-            bool hospital_readmission = true;
-            string healthcare_Program = "radio_program_medicaid";
-            string visit_date = "23/04/2025";
-            
-            var login = new Login(driver);
-            login.auto_login();
-            var appointment = new Appointment(login.GetHelper().GetDriver());
-            appointment.wait().wait_until_visable_byID("combo_facility");
-            appointment.choose_facility(facility);
-            appointment.hospital_readmission(hospital_readmission);
-            appointment.healthcare_Program(healthcare_Program);
-            appointment.visit_date(visit_date);
-            appointment.comment("Test comment");
-            string previousHtml = login.GetHelper().GetDriver().PageSource;
-            appointment.book_appointment();
-            var appointment_confirmation = new AppointmentConfirmation(appointment.GetHelper().GetDriver());
-            appointment.wait().wait_until_visable_byID("summary");
-            string currentHtml = login.GetHelper().GetDriver().PageSource;
-            
             try
             {
+                string facility = "Hongkong CURA Healthcare Center";
+                bool hospital_readmission = true;
+                string healthcare_Program = "radio_program_medicaid";
+                string visit_date = "23/04/2025";
+                
+                var login = new Login(driver);
+                login.auto_login();
+                var appointment = new Appointment(login.GetHelper().GetDriver());
+                appointment.wait().wait_until_visable_byID("combo_facility");
+                appointment.choose_facility(facility);
+                appointment.hospital_readmission(hospital_readmission);
+                appointment.healthcare_Program(healthcare_Program);
+                appointment.visit_date(visit_date);
+                appointment.comment("Test comment");
+                string previousHtml = login.GetHelper().GetDriver().PageSource;
+                appointment.book_appointment();
+                var appointment_confirmation = new AppointmentConfirmation(appointment.GetHelper().GetDriver());
+                appointment.wait().wait_until_visable_byID("summary");
+                string currentHtml = login.GetHelper().GetDriver().PageSource;
+            
+            
                 var url = appointment_confirmation.GetHelper().GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("appointment.php#summary");

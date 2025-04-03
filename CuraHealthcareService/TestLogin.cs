@@ -25,15 +25,15 @@ namespace Roys_Selenium_Portfolio
         [Fact]
         public void correct_login()
         {
-            var login = new Login(driver);
-            
-            login.enterusername();
-            login.enterpassword();
-            login.submit();
-            Thread.Sleep(1000);
-
             try
             {
+                var login = new Login(driver);
+                
+                login.enterusername();
+                login.enterpassword();
+                login.submit();
+                Thread.Sleep(1000);
+                
                 var url = login.GetHelper().GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("/#appointment");
@@ -53,17 +53,17 @@ namespace Roys_Selenium_Portfolio
         [Fact]
         public void incorrect_login_username()
         {
-            var login = new Login(driver);
-            login.enterusername("notJohnDoe");
-            login.enterpassword();
-            var previousHtml = driver.PageSource;
-            login.submit();
-            Thread.Sleep(1000);
-            
-            string currentHtml = login.GetHelper().GetDriver().PageSource;
-            
             try
             {
+                var login = new Login(driver);
+                login.enterusername("notJohnDoe");
+                login.enterpassword();
+                var previousHtml = driver.PageSource;
+                login.submit();
+                Thread.Sleep(1000);
+                
+                string currentHtml = login.GetHelper().GetDriver().PageSource;
+            
                 var url = login.GetHelper().GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");
@@ -84,17 +84,17 @@ namespace Roys_Selenium_Portfolio
         [Fact]
         public void incorrect_login_password()
         {
-            var login = new Login(driver);
-            login.enterusername();
-            login.enterpassword("incorrectpassword");
-            var previousHtml = driver.PageSource;
-            login.submit();
-            Thread.Sleep(1000);
-            
-            string currentHtml = login.GetHelper().GetDriver().PageSource;
-            
             try
             {
+                var login = new Login(driver);
+                login.enterusername();
+                login.enterpassword("incorrectpassword");
+                var previousHtml = driver.PageSource;
+                login.submit();
+                Thread.Sleep(1000);
+                
+                string currentHtml = login.GetHelper().GetDriver().PageSource;
+                
                 var url = login.GetHelper().GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");
