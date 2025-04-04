@@ -27,7 +27,7 @@ namespace Roys_Selenium_Portfolio
         {
             try
             {
-                var login = new Login(driver);
+                var login = new Login(_driver);
                 
                 login.enterusername();
                 login.enterpassword();
@@ -55,10 +55,10 @@ namespace Roys_Selenium_Portfolio
         {
             try
             {
-                var login = new Login(driver);
+                var login = new Login(_driver);
                 login.enterusername("notJohnDoe");
                 login.enterpassword();
-                var previousHtml = driver.PageSource;
+                var previousHtml = _driver.PageSource;
                 login.submit();
                 Thread.Sleep(1000);
                 
@@ -86,10 +86,10 @@ namespace Roys_Selenium_Portfolio
         {
             try
             {
-                var login = new Login(driver);
+                var login = new Login(_driver);
                 login.enterusername();
                 login.enterpassword("incorrectpassword");
-                var previousHtml = driver.PageSource;
+                var previousHtml = _driver.PageSource;
                 login.submit();
                 Thread.Sleep(1000);
                 

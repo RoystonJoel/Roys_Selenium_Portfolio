@@ -21,25 +21,25 @@ namespace Roys_Selenium_Portfolio
         }
 
         //types in a text box
-        public void ByXpath(string _text, string _Xpath)
+        public void ByXpath(string text, string xpath)
         {
-            _elementInteraction.SendKeys(By.XPath(_Xpath),_text);
+            _elementInteraction.SendKeys(By.XPath(xpath),text);
         }
 
         //clicks on anything using the elements ID. Uses wait helpers incase page doesn't respond immediately
-        public void ById(string _text, string _id)
+        public void ById(string text, string id)
         {
-            _elementInteraction.SendKeys(By.Id(_id),_text);
+            _elementInteraction.SendKeys(By.Id(id),text);
         }
 
-        public void ByLinkText(string _text, string _linktext)
+        public void ByLinkText(string text, string linktext)
         {
-            _elementInteraction.SendKeys(By.LinkText(_linktext),_text);
+            _elementInteraction.SendKeys(By.LinkText(linktext),text);
         }
 
-        public void ByClassName(string _text, string _classname)
+        public void ByClassName(string text, string classname)
         {
-            _elementInteraction.SendKeys(By.ClassName(_classname),_text);
+            _elementInteraction.SendKeys(By.ClassName(classname),text);
         }
     }
 }

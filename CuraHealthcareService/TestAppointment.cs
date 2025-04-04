@@ -24,10 +24,10 @@ namespace Roys_Selenium_Portfolio
                 string healthcare_Program = "radio_program_medicaid";
                 string visit_date = "23/04/2025";
                 
-                var login = new Login(driver);
+                var login = new Login(_driver);
                 login.auto_login();
                 var appointment = new Appointment(login.GetHelper().GetDriver());
-                appointment.wait().wait_until_visable_byID("combo_facility");
+                appointment.wait().waitUntilVisableByID("combo_facility");
                 appointment.choose_facility(facility);
                 appointment.hospital_readmission(hospital_readmission);
                 appointment.healthcare_Program(healthcare_Program);
@@ -36,7 +36,7 @@ namespace Roys_Selenium_Portfolio
                 string previousHtml = login.GetHelper().GetDriver().PageSource;
                 appointment.book_appointment();
                 var appointment_confirmation = new AppointmentConfirmation(appointment.GetHelper().GetDriver());
-                appointment.wait().wait_until_visable_byID("summary");
+                appointment.wait().waitUntilVisableByID("summary");
                 string currentHtml = login.GetHelper().GetDriver().PageSource;
             
             

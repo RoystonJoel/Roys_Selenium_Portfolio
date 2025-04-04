@@ -10,25 +10,25 @@ public class GetText
         _elementInteraction = new ElementInteraction(driver);
     }
     
-    public string ByXpath(string _Xpath)
+    public string ByXpath(string xpath)
     {
-        return _elementInteraction.GetText(By.XPath(_Xpath));
+        return _elementInteraction.GetText(By.XPath(xpath));
     }
     
-    public string ById(string _id)
+    public string ById(string id)
     {
-        return _elementInteraction.GetText(By.Id(_id));
+        return _elementInteraction.GetText(By.Id(id));
         
     }
 
-    public string ByLinkText(string _linktext)
+    public string ByLinkText(string linktext)
     {
-        return _elementInteraction.GetText(By.LinkText(_linktext));
+        return _elementInteraction.GetText(By.LinkText(linktext));
     }
 
-    public string ByClassName(string _classname)
+    public string ByClassName(string classname)
     {
-        return _elementInteraction.GetText(By.ClassName(_classname));
+        return _elementInteraction.GetText(By.ClassName(classname));
     }
     
 }

@@ -14,8 +14,8 @@ public class Dropdown
         _elementInteraction = new ElementInteraction(driver);
     }
     
-    public Select ById(string _id)
+    public Select ById(string id)
     {
-        return new Select(_elementInteraction.Select(By.Id(_id)));
+        return new Select(_elementInteraction.Select(By.Id(id)));
     }
 }

@@ -6,27 +6,27 @@ using Xunit.Abstractions;
 public class Test : IDisposable
 {
     protected  readonly ITestOutputHelper output;
-    protected  readonly ChromeOptions _options;
-    protected  readonly ChromeDriver driver;
+    protected  readonly ChromeOptions options;
+    protected  readonly ChromeDriver _driver;
     protected  readonly WebDriverWait wait;
     protected  readonly string[] scopes;
     
     public Test(ITestOutputHelper output)
     {
-        _options = new ChromeOptions();
-        //_options.AddArgument("--headless");
-        _options.AddUserProfilePreference("profile.password_manager_leak_detection", false);
+        options = new ChromeOptions();
+        //options.AddArgument("--headless");
+        options.AddUserProfilePreference("profile.password_manager_leak_detection", false);
         this.output = output;
-        driver = new ChromeDriver(_options);
-        driver.Manage().Window.Maximize(); //fullscreen
+        _driver = new ChromeDriver(options);
+        _driver.Manage().Window.Maximize(); //fullscreen
     }
     
     public void Dispose()
     {
         try
         {
-            driver.Quit();
-            driver.Dispose();
+            _driver.Quit();
+            _driver.Dispose();
         }
         catch (Exception ex)
         {

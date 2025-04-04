@@ -11,7 +11,7 @@ public class WaitHelper
     public WaitHelper(IWebDriver driver)
     {
         _driver = driver;
-        _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+        _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
     }
     
     public IWebElement WaitUntilVisible(By by)

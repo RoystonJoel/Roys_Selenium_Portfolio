@@ -4,14 +4,14 @@ namespace Roys_Selenium_Portfolio;
 
 public class Wait
 {
-    private readonly WaitHelper _waitheper;
+    private readonly WaitHelper waithelper;
     public Wait(IWebDriver driver)
     {
-        _waitheper = new  WaitHelper(driver);
+        waithelper = new  WaitHelper(driver);
     }
 
-    public void wait_until_visable_byID(string _id)
+    public void waitUntilVisableByID(string id)
     {
-        _waitheper.WaitUntilVisible(By.Id(_id));
+        waithelper.WaitUntilVisible(By.Id(id));
     }
 }

@@ -21,25 +21,25 @@ namespace Roys_Selenium_Portfolio
         }
 
         //clicks on anything using the elements xpath. Uses wait helpers incase page doesn't respond immediately 
-        public void ByXpath(string _xpath)
+        public void ByXpath(string xpath)
         {
-            _elementInteraction.Click(By.XPath(_xpath));
+            _elementInteraction.Click(By.XPath(xpath));
         }
 
         //clicks on anything that has an ID on it. Uses wait helpers incase page doesn't respond immediately
-        public void ById(string _id)
+        public void ById(string id)
         {
-            _elementInteraction.Click(By.Id(_id));
+            _elementInteraction.Click(By.Id(id));
         }
 
-        public void ByLinkText(string _linktext) 
+        public void ByLinkText(string linktext) 
         {
-            _elementInteraction.Click(By.LinkText(_linktext));
+            _elementInteraction.Click(By.LinkText(linktext));
         }
 
-        public void ByClassName(string _classname)
+        public void ByClassName(string classname)
         {
-            _elementInteraction.Click(By.ClassName(_classname));
+            _elementInteraction.Click(By.ClassName(classname));
         }
         
     }

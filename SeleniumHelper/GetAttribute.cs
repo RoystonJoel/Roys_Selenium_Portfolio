@@ -10,24 +10,24 @@ public class GetAttribute
         _elementInteraction = new ElementInteraction(driver);
     }
     
-    public string ByXpath(string _Xpath, string attributeName)
+    public string ByXpath(string xpath, string attributeName)
     {
-        return _elementInteraction.GetAttribute(By.XPath(_Xpath),attributeName);
+        return _elementInteraction.GetAttribute(By.XPath(xpath),attributeName);
     }
     
-    public string ById(string _id, string attributeName)
+    public string ById(string id, string attributeName)
     {
-        return _elementInteraction.GetAttribute(By.Id(_id),attributeName);
+        return _elementInteraction.GetAttribute(By.Id(id),attributeName);
     }
 
-    public string ByLinkText(string _linktext, string attributeName)
+    public string ByLinkText(string linktext, string attributeName)
     {
-        return _elementInteraction.GetAttribute(By.LinkText(_linktext),attributeName);
+        return _elementInteraction.GetAttribute(By.LinkText(linktext),attributeName);
     }
 
-    public string ByClassName(string _classname, string attributeName)
+    public string ByClassName(string classname, string attributeName)
     {
-        return _elementInteraction.GetAttribute(By.ClassName(_classname),attributeName);
+        return _elementInteraction.GetAttribute(By.ClassName(classname),attributeName);
     }
     
 }
