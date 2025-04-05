@@ -6,7 +6,7 @@ using Xunit.Abstractions;
 
 namespace Roys_Selenium_Portfolio
 {
-    public class Login : Page
+    public class Login : CHSPageBase
     {
         private readonly SeleniumHelper _helper;
 

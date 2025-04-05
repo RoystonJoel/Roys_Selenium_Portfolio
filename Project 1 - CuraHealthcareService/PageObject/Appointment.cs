@@ -3,7 +3,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace Roys_Selenium_Portfolio;
 
-public class Appointment : Page
+public class Appointment : CHSPageBase
 {
     private readonly SeleniumHelper _helper;
 

@@ -4,14 +4,13 @@ using OpenQA.Selenium.Chrome;
 namespace Roys_Selenium_Portfolio;
 
 
-public class AppointmentConfirmation : Page
+public class AppointmentConfirmation : CHSPageBase
 {
     private readonly SeleniumHelper _helper;
 
     public AppointmentConfirmation(IWebDriver driver) : base(driver)
     {
         _helper = new SeleniumHelper(driver);
-        _helper.wait().waitUntilVisableByID("summary");
     }
 
     public string facility()

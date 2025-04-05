@@ -14,7 +14,7 @@ using Roys_Selenium_Portfolio;
 
 namespace Roys_Selenium_Portfolio
 {
-    public class TestLogin : Test
+    public class TestLogin : CHSTestBase
     {
 
         public TestLogin(ITestOutputHelper output) : base(output)

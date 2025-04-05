@@ -3,11 +3,11 @@ using OpenQA.Selenium.Chrome;
 
 namespace Roys_Selenium_Portfolio;
 
-public class Page
+public class CHSPageBase
 {
     private readonly SeleniumHelper _helper;
 
-    public Page(IWebDriver driver)
+    public CHSPageBase(IWebDriver driver)
     {
         _helper = new SeleniumHelper(driver);
     }
