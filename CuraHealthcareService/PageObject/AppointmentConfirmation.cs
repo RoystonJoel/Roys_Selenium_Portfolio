@@ -11,6 +11,7 @@ public class AppointmentConfirmation : Page
     public AppointmentConfirmation(IWebDriver driver) : base(driver)
     {
         _helper = new SeleniumHelper(driver);
+        _helper.wait().waitUntilVisableByID("summary");
     }
 
     public string facility()

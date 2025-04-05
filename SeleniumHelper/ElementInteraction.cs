@@ -13,7 +13,7 @@ public class ElementInteraction
         _driver = driver;
     }
 
-    private IWebElement FindElement(By by)
+    public IWebElement FindElement(By by)
     {
         return _driver.FindElement(by);
     }

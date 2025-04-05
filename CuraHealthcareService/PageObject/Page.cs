@@ -16,9 +16,4 @@ public class Page
     {
         return _helper;
     }
-
-    public  Wait wait()
-    { 
-        return _helper.wait();
-    }
 }
