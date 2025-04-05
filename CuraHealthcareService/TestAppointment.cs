@@ -58,10 +58,40 @@ namespace Roys_Selenium_Portfolio
             }
             Dispose();
         }
-        
-        
-        
 
-
+        [Fact]
+        public void Appointment_NoDate()
+        {
+            try
+            {
+                string facility = "Hongkong CURA Healthcare Center";
+                bool hospital_readmission = true;
+                string healthcare_Program = "radio_program_medicaid";
+                
+                var login = new Login(_driver);
+                login.auto_login();
+                var appointment = new Appointment(login.GetHelper().GetDriver());
+                
+                appointment.choose_facility(facility);
+                appointment.hospital_readmission(hospital_readmission);
+                appointment.healthcare_Program(healthcare_Program);
+                appointment.comment("Test comment");
+                appointment.book_appointment();
+                
+                output.WriteLine(appointment.isFieldInvalid().ToString());
+                output.WriteLine(appointment.validationMessage());
+                Assert.False(appointment.isFieldInvalid(), "The required field should be marked as invalid.");
+                // Note: The exact validation message text can vary slightly between browsers
+                Assert.NotEmpty(appointment.validationMessage());
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+                Dispose();
+                throw;
+            }
+            Dispose();
+        }
     }
 }

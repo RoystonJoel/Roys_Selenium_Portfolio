@@ -72,4 +72,15 @@ public class Appointment : Page
     {
         _helper.click().ById("btn-book-appointment");
     }
+
+    public bool isFieldInvalid()
+    {
+        return _helper.JavaScriptExecutor<bool>("return arguments[0].checkValidity();", _helper.GetElement(By.Id("txt_visit_date")));
+    }
+
+    public string validationMessage()
+    {
+        return _helper.JavaScriptExecutor<string>("return arguments[0].validationMessage;", _helper.GetElement(By.Id("txt_visit_date")));
+        
+    }
 }
