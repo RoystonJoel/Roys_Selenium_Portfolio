@@ -21,6 +21,11 @@ namespace Roys_Selenium_Portfolio
         {
             _driver = driver;
         }
+        
+        public IWebElement GetElement(By by)
+        {
+            return new ElementInteraction(_driver).FindElement(by);
+        }
 
         //switchs the driver to operate on another tab
         public void SwitchTabs(int tabNumber)
