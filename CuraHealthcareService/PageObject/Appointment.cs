@@ -10,6 +10,7 @@ public class Appointment : Page
     public Appointment(IWebDriver driver) : base(driver)
     {
         _helper = new SeleniumHelper(driver);
+       _helper.wait().waitUntilVisableByID("combo_facility");
     }
 
     public void choose_facility()
