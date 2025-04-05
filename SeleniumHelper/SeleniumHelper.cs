@@ -37,7 +37,13 @@ namespace Roys_Selenium_Portfolio
         //if the textbox is atually a div element and not a <input>, use this.
         public void ForceSendKeys(string text, string xpath)
         {
-            ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].innerHTML = '" + text + "';", _driver.FindElement(By.XPath(xpath)));
+            //((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].innerHTML = '" + text + "';", _driver.FindElement(By.XPath(xpath)));
+            JavaScriptExecutor<object>("arguments[0].innerHTML = '" + text + "';",GetElement(By.XPath(xpath)));
+        }
+        
+        public T JavaScriptExecutor<T>(string javascript, IWebElement field)
+        {
+            return (T)((IJavaScriptExecutor)_driver).ExecuteScript(javascript, field);
         }
 
         public SendKeysFunctions sendkeys() 
