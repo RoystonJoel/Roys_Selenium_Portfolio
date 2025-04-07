@@ -4,7 +4,7 @@ using OpenQA.Selenium.Chrome;
 namespace Roys_Selenium_Portfolio;
 
 
-public class AppointmentConfirmation : CHSPageBase
+public class AppointmentConfirmation : PageBase
 {
     private readonly SeleniumHelper _helper;
 

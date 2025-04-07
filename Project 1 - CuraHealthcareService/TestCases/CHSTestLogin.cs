@@ -14,10 +14,10 @@ using Roys_Selenium_Portfolio;
 
 namespace Roys_Selenium_Portfolio
 {
-    public class TestLogin : CHSTestBase
+    public class CHSTestLogin : CHSTestBase
     {
 
-        public TestLogin(ITestOutputHelper output) : base(output)
+        public CHSTestLogin(ITestOutputHelper output) : base(output)
         {
         }
         
@@ -34,7 +34,7 @@ namespace Roys_Selenium_Portfolio
                 login.submit();
                 Thread.Sleep(1000);
                 
-                var url = login.GetHelper().GetDriver().Url;
+                var url = login.GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("/#appointment");
                 url.Should().NotBe("https://katalon-demo-cura.herokuapp.com/");
@@ -62,9 +62,9 @@ namespace Roys_Selenium_Portfolio
                 login.submit();
                 Thread.Sleep(1000);
                 
-                string currentHtml = login.GetHelper().GetDriver().PageSource;
+                string currentHtml = login.GetDriver().PageSource;
             
-                var url = login.GetHelper().GetDriver().Url;
+                var url = login.GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");
                 url.Should().NotBeNull();
@@ -93,9 +93,9 @@ namespace Roys_Selenium_Portfolio
                 login.submit();
                 Thread.Sleep(1000);
                 
-                string currentHtml = login.GetHelper().GetDriver().PageSource;
+                string currentHtml = login.GetDriver().PageSource;
                 
-                var url = login.GetHelper().GetDriver().Url;
+                var url = login.GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");
                 url.Should().NotBeNull();

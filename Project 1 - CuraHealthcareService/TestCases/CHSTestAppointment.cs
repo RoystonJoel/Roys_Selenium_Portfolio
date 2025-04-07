@@ -7,10 +7,10 @@ using Xunit.Abstractions;
 namespace Roys_Selenium_Portfolio
 {
     
-    public class TestAppointment : CHSTestBase
+    public class CHSTestAppointment : CHSTestBase
     {
         
-        public TestAppointment(ITestOutputHelper output) : base(output)
+        public CHSTestAppointment(ITestOutputHelper output) : base(output)
         {
         }
 
@@ -26,16 +26,16 @@ namespace Roys_Selenium_Portfolio
                 
                 var login = new Login(_driver);
                 login.auto_login();
-                var appointment = new Appointment(login.GetHelper().GetDriver());
+                var appointment = new Appointment(login.GetDriver());
                 appointment.choose_facility(facility);
                 appointment.hospital_readmission(hospital_readmission);
                 appointment.healthcare_Program(healthcare_Program);
                 appointment.visit_date(visit_date);
                 appointment.comment("Test comment");
-                string previousHtml = login.GetHelper().GetDriver().PageSource;
+                string previousHtml = login.GetDriver().PageSource;
                 appointment.book_appointment();
-                var appointment_confirmation = new AppointmentConfirmation(appointment.GetHelper().GetDriver());
-                string currentHtml = login.GetHelper().GetDriver().PageSource;
+                var appointment_confirmation = new AppointmentConfirmation(appointment.GetDriver());
+                string currentHtml = login.GetDriver().PageSource;
             
             
                 var url = appointment_confirmation.GetHelper().GetDriver().Url;
@@ -70,7 +70,7 @@ namespace Roys_Selenium_Portfolio
                 
                 var login = new Login(_driver);
                 login.auto_login();
-                var appointment = new Appointment(login.GetHelper().GetDriver());
+                var appointment = new Appointment(login.GetDriver());
                 
                 appointment.choose_facility(facility);
                 appointment.hospital_readmission(hospital_readmission);
