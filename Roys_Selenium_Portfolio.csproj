@@ -24,8 +24,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Project 2 - OrangeHRMLive\PageObject\" />
-      <Folder Include="Project 2 - OrangeHRMLive\TestCases\" />
       <Folder Include="seed\" />
     </ItemGroup>
 

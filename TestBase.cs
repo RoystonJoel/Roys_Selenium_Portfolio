@@ -3,7 +3,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Xunit.Abstractions;
 
-public class CHSTestBase : IDisposable
+public class TestBase : IDisposable
 {
     protected  readonly ITestOutputHelper output;
     protected  readonly ChromeOptions options;
@@ -11,7 +11,7 @@ public class CHSTestBase : IDisposable
     protected  readonly WebDriverWait wait;
     protected  readonly string[] scopes;
     
-    public CHSTestBase(ITestOutputHelper output)
+    public TestBase(ITestOutputHelper output)
     {
         options = new ChromeOptions();
         //options.AddArgument("--headless");

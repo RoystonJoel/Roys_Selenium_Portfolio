@@ -4,11 +4,11 @@ using OpenQA.Selenium.Chrome;
 namespace Roys_Selenium_Portfolio;
 
 
-public class AppointmentConfirmation : PageBase
+public class CHSAppointmentConfirmation : PageBase
 {
     private readonly SeleniumHelper _helper;
 
-    public AppointmentConfirmation(IWebDriver driver) : base(driver)
+    public CHSAppointmentConfirmation(IWebDriver driver) : base(driver)
     {
         _helper = new SeleniumHelper(driver);
     }

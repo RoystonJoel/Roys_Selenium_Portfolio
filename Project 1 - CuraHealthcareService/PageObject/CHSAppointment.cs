@@ -3,11 +3,11 @@ using OpenQA.Selenium.Chrome;
 
 namespace Roys_Selenium_Portfolio;
 
-public class Appointment : PageBase
+public class CHSAppointment : PageBase
 {
     private readonly SeleniumHelper _helper;
 
-    public Appointment(IWebDriver driver) : base(driver)
+    public CHSAppointment(IWebDriver driver) : base(driver)
     {
         _helper = new SeleniumHelper(driver);
        _helper.wait().waitUntilVisableByID("combo_facility");

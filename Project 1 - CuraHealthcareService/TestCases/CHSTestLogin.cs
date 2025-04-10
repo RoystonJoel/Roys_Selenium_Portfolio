@@ -14,7 +14,7 @@ using Roys_Selenium_Portfolio;
 
 namespace Roys_Selenium_Portfolio
 {
-    public class CHSTestLogin : CHSTestBase
+    public class CHSTestLogin : TestBase
     {
 
         public CHSTestLogin(ITestOutputHelper output) : base(output)
@@ -27,7 +27,7 @@ namespace Roys_Selenium_Portfolio
         {
             try
             {
-                var login = new Login(_driver);
+                var login = new CHSLogin(_driver);
                 
                 login.enterusername();
                 login.enterpassword();
@@ -55,7 +55,7 @@ namespace Roys_Selenium_Portfolio
         {
             try
             {
-                var login = new Login(_driver);
+                var login = new CHSLogin(_driver);
                 login.enterusername("notJohnDoe");
                 login.enterpassword();
                 var previousHtml = _driver.PageSource;
@@ -86,7 +86,7 @@ namespace Roys_Selenium_Portfolio
         {
             try
             {
-                var login = new Login(_driver);
+                var login = new CHSLogin(_driver);
                 login.enterusername();
                 login.enterpassword("incorrectpassword");
                 var previousHtml = _driver.PageSource;

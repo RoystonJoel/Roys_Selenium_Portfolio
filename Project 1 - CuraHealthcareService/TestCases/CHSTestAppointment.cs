@@ -7,7 +7,7 @@ using Xunit.Abstractions;
 namespace Roys_Selenium_Portfolio
 {
     
-    public class CHSTestAppointment : CHSTestBase
+    public class CHSTestAppointment : TestBase
     {
         
         public CHSTestAppointment(ITestOutputHelper output) : base(output)
@@ -24,9 +24,9 @@ namespace Roys_Selenium_Portfolio
                 string healthcare_Program = "radio_program_medicaid";
                 string visit_date = "23/04/2025";
                 
-                var login = new Login(_driver);
+                var login = new CHSLogin(_driver);
                 login.auto_login();
-                var appointment = new Appointment(login.GetDriver());
+                var appointment = new CHSAppointment(login.GetDriver());
                 appointment.choose_facility(facility);
                 appointment.hospital_readmission(hospital_readmission);
                 appointment.healthcare_Program(healthcare_Program);
@@ -34,7 +34,7 @@ namespace Roys_Selenium_Portfolio
                 appointment.comment("Test comment");
                 string previousHtml = login.GetDriver().PageSource;
                 appointment.book_appointment();
-                var appointment_confirmation = new AppointmentConfirmation(appointment.GetDriver());
+                var appointment_confirmation = new CHSAppointmentConfirmation(appointment.GetDriver());
                 string currentHtml = login.GetDriver().PageSource;
             
             
@@ -68,9 +68,9 @@ namespace Roys_Selenium_Portfolio
                 bool hospital_readmission = true;
                 string healthcare_Program = "radio_program_medicaid";
                 
-                var login = new Login(_driver);
+                var login = new CHSLogin(_driver);
                 login.auto_login();
-                var appointment = new Appointment(login.GetDriver());
+                var appointment = new CHSAppointment(login.GetDriver());
                 
                 appointment.choose_facility(facility);
                 appointment.hospital_readmission(hospital_readmission);

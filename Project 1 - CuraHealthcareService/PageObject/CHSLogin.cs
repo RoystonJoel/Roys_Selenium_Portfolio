@@ -6,12 +6,12 @@ using Xunit.Abstractions;
 
 namespace Roys_Selenium_Portfolio
 {
-    public class Login : PageBase
+    public class CHSLogin : PageBase
     {
         private readonly SeleniumHelper _helper;
 
 
-        public Login(IWebDriver driver) : base(driver)
+        public CHSLogin(IWebDriver driver) : base(driver)
         {
             _helper = new SeleniumHelper(driver);
             _helper.Visit("https://katalon-demo-cura.herokuapp.com/");
