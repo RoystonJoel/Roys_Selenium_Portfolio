@@ -51,7 +51,7 @@ namespace Roys_Selenium_Portfolio
             return new SendKeysFunctions(_driver);
         }
 
-        public GetText grabtext()
+        public GetText Gettext()
         {
             return new GetText(_driver);
         }

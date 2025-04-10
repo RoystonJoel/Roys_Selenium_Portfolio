@@ -15,12 +15,12 @@ public class CHSAppointmentConfirmation : PageBase
 
     public string facility()
     {
-        return _helper.grabtext().ById("facility");
+        return _helper.Gettext().ById("facility");
     }
     
     public bool hospital_readmission()
     {
-        if (_helper.grabtext().ById("hospital_readmission").ToLower() == "yes")
+        if (_helper.Gettext().ById("hospital_readmission").ToLower() == "yes")
         {
             return true;
         }
@@ -32,17 +32,17 @@ public class CHSAppointmentConfirmation : PageBase
     
     public string program()
     {
-        return _helper.grabtext().ById("program");
+        return _helper.Gettext().ById("program");
     }
     
     public string visit_date()
     {
-        return _helper.grabtext().ById("visit_date");
+        return _helper.Gettext().ById("visit_date");
     }
     
     public string comment()
     {
-        return _helper.grabtext().ById("comment");
+        return _helper.Gettext().ById("comment");
     }
     
     public SeleniumHelper GetHelper()
