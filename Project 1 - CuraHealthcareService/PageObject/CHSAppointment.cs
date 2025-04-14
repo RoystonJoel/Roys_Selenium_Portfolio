@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace Roys_Selenium_Portfolio;
+namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService;
 
 public class CHSAppointment : PageBase
 {

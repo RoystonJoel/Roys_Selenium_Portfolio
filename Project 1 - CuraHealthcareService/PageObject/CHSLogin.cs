@@ -4,7 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Xunit.Abstractions;
 
-namespace Roys_Selenium_Portfolio
+namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
 {
     public class CHSLogin : PageBase
     {

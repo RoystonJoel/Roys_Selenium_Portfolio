@@ -4,7 +4,7 @@ using FluentAssertions;
 using System.Diagnostics;
 using Xunit.Abstractions;
 
-namespace Roys_Selenium_Portfolio
+namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
 {
     
     public class CHSTestAppointment : TestBase

@@ -12,7 +12,7 @@ using System.Buffers.Text;
 using OpenQA.Selenium.Internal;
 using Roys_Selenium_Portfolio;
 
-namespace Roys_Selenium_Portfolio
+namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
 {
     public class CHSTestLogin : TestBase
     {
