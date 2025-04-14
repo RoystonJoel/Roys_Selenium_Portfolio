@@ -30,5 +30,10 @@ public class GetText
     {
         return _elementInteraction.GetText(By.ClassName(classname));
     }
+    public string ByClassName(string classname, string index)
+    {
+        return _elementInteraction.GetText(By.ClassName(classname));
+    }
+    
     
 }
