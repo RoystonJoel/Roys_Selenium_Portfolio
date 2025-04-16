@@ -19,9 +19,17 @@ namespace Roys_Selenium_Portfolio.Project_2___OrangeHRMLive;
         {
             _helper.sendkeys().ByName(GetUsername(), "username");
         }
+        public void EnterUsername(string username)
+        {
+            _helper.sendkeys().ByName(username, "username");
+        }
         public void EnterPassword()
         {
             _helper.sendkeys().ByName(GetPassword(), "password");
+        }
+        public void EnterPassword(string password)
+        {
+            _helper.sendkeys().ByName(password, "password");
         }
 
         public string GetUsername()
