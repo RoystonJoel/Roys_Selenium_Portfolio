@@ -10,6 +10,7 @@ public class TestBase : IDisposable
     protected  readonly ChromeDriver _driver;
     protected  readonly WebDriverWait wait;
     protected  readonly string[] scopes;
+    protected  OrangeHrmCredentials credentials;
     
     public TestBase(ITestOutputHelper output)
     {
@@ -32,5 +33,10 @@ public class TestBase : IDisposable
         {
             output.WriteLine($"Error during Dispose: {ex.Message}");
         }
+    }
+
+    public void initlizeSecretsOrangeHrm()
+    {
+        credentials = SecretReader.GetOrangeHrmCredentials(output);
     }
 }
