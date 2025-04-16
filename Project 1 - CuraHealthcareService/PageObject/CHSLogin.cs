@@ -4,14 +4,14 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Xunit.Abstractions;
 
-namespace Roys_Selenium_Portfolio
+namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
 {
-    public class Login : Page
+    public class CHSLogin : PageBase
     {
         private readonly SeleniumHelper _helper;
 
 
-        public Login(IWebDriver driver) : base(driver)
+        public CHSLogin(IWebDriver driver) : base(driver)
         {
             _helper = new SeleniumHelper(driver);
             _helper.Visit("https://katalon-demo-cura.herokuapp.com/");

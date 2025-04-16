@@ -45,13 +45,18 @@ namespace Roys_Selenium_Portfolio
         {
             return (T)((IJavaScriptExecutor)_driver).ExecuteScript(javascript, field);
         }
+        
+        public T JavaScriptExecutor<T>(string javascript)
+        {
+            return (T)((IJavaScriptExecutor)_driver).ExecuteScript(javascript);
+        }
 
         public SendKeysFunctions sendkeys() 
         {
             return new SendKeysFunctions(_driver);
         }
 
-        public GetText grabtext()
+        public GetText Gettext()
         {
             return new GetText(_driver);
         }
@@ -90,6 +95,7 @@ namespace Roys_Selenium_Portfolio
         //closes the drivers windows, and closes the session
         public void Dispose()
         {
+            _driver.Quit();
             _driver.Dispose();  
         }
 

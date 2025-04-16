@@ -41,5 +41,10 @@ namespace Roys_Selenium_Portfolio
         {
             _elementInteraction.SendKeys(By.ClassName(classname),text);
         }
+
+        public void ByName(string text, string name)
+        {
+            _elementInteraction.SendKeys(By.Name(name),text);
+        }
     }
 }

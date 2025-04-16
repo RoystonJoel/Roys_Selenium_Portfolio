@@ -14,4 +14,9 @@ public class Wait
     {
         waithelper.WaitUntilVisible(By.Id(id));
     }
+
+    public void waitUntilVisableByName(string name)
+    {
+        waithelper.WaitUntilVisible(By.Name(name));
+    }
 }

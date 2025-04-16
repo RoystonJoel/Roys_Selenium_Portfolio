@@ -4,13 +4,13 @@ using FluentAssertions;
 using System.Diagnostics;
 using Xunit.Abstractions;
 
-namespace Roys_Selenium_Portfolio
+namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
 {
     
-    public class TestAppointment : Test
+    public class CHSTestAppointment : TestBase
     {
         
-        public TestAppointment(ITestOutputHelper output) : base(output)
+        public CHSTestAppointment(ITestOutputHelper output) : base(output)
         {
         }
 
@@ -24,18 +24,18 @@ namespace Roys_Selenium_Portfolio
                 string healthcare_Program = "radio_program_medicaid";
                 string visit_date = "23/04/2025";
                 
-                var login = new Login(_driver);
+                var login = new CHSLogin(_driver);
                 login.auto_login();
-                var appointment = new Appointment(login.GetHelper().GetDriver());
+                var appointment = new CHSAppointment(login.GetDriver());
                 appointment.choose_facility(facility);
                 appointment.hospital_readmission(hospital_readmission);
                 appointment.healthcare_Program(healthcare_Program);
                 appointment.visit_date(visit_date);
                 appointment.comment("Test comment");
-                string previousHtml = login.GetHelper().GetDriver().PageSource;
+                string previousHtml = login.GetDriver().PageSource;
                 appointment.book_appointment();
-                var appointment_confirmation = new AppointmentConfirmation(appointment.GetHelper().GetDriver());
-                string currentHtml = login.GetHelper().GetDriver().PageSource;
+                var appointment_confirmation = new CHSAppointmentConfirmation(appointment.GetDriver());
+                string currentHtml = login.GetDriver().PageSource;
             
             
                 var url = appointment_confirmation.GetHelper().GetDriver().Url;
@@ -68,9 +68,9 @@ namespace Roys_Selenium_Portfolio
                 bool hospital_readmission = true;
                 string healthcare_Program = "radio_program_medicaid";
                 
-                var login = new Login(_driver);
+                var login = new CHSLogin(_driver);
                 login.auto_login();
-                var appointment = new Appointment(login.GetHelper().GetDriver());
+                var appointment = new CHSAppointment(login.GetDriver());
                 
                 appointment.choose_facility(facility);
                 appointment.hospital_readmission(hospital_readmission);

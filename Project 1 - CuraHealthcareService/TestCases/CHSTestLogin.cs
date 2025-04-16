@@ -12,12 +12,12 @@ using System.Buffers.Text;
 using OpenQA.Selenium.Internal;
 using Roys_Selenium_Portfolio;
 
-namespace Roys_Selenium_Portfolio
+namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
 {
-    public class TestLogin : Test
+    public class CHSTestLogin : TestBase
     {
 
-        public TestLogin(ITestOutputHelper output) : base(output)
+        public CHSTestLogin(ITestOutputHelper output) : base(output)
         {
         }
         
@@ -27,14 +27,14 @@ namespace Roys_Selenium_Portfolio
         {
             try
             {
-                var login = new Login(_driver);
+                var login = new CHSLogin(_driver);
                 
                 login.enterusername();
                 login.enterpassword();
                 login.submit();
                 Thread.Sleep(1000);
                 
-                var url = login.GetHelper().GetDriver().Url;
+                var url = login.GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("/#appointment");
                 url.Should().NotBe("https://katalon-demo-cura.herokuapp.com/");
@@ -55,16 +55,16 @@ namespace Roys_Selenium_Portfolio
         {
             try
             {
-                var login = new Login(_driver);
+                var login = new CHSLogin(_driver);
                 login.enterusername("notJohnDoe");
                 login.enterpassword();
                 var previousHtml = _driver.PageSource;
                 login.submit();
                 Thread.Sleep(1000);
                 
-                string currentHtml = login.GetHelper().GetDriver().PageSource;
+                string currentHtml = login.GetDriver().PageSource;
             
-                var url = login.GetHelper().GetDriver().Url;
+                var url = login.GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");
                 url.Should().NotBeNull();
@@ -86,16 +86,16 @@ namespace Roys_Selenium_Portfolio
         {
             try
             {
-                var login = new Login(_driver);
+                var login = new CHSLogin(_driver);
                 login.enterusername();
                 login.enterpassword("incorrectpassword");
                 var previousHtml = _driver.PageSource;
                 login.submit();
                 Thread.Sleep(1000);
                 
-                string currentHtml = login.GetHelper().GetDriver().PageSource;
+                string currentHtml = login.GetDriver().PageSource;
                 
-                var url = login.GetHelper().GetDriver().Url;
+                var url = login.GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");
                 url.Should().NotBeNull();
