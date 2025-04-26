@@ -11,7 +11,6 @@ namespace Roys_Selenium_Portfolio;
 public class SecretReader
 {
     // Using @ makes it a verbatim string, handling backslashes correctly.
-    //System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory+ @"..\..\..\", "/seed/secrets.json")
     private static string SecretsFilePath = @"seed\secrets.json";
 
     private static SecretsConfig _cachedSecrets = null; // Simple caching
@@ -85,6 +84,6 @@ public class OrangeHrmCredentials
 
 public class SecretsConfig
 {
-    // This property name MUST match the top-level key in your JSON ("OrangeHRM")
+    // This property name MUST match the top-level key in your JSON file.
     public OrangeHrmCredentials OrangeHRM { get; set; }
 }
