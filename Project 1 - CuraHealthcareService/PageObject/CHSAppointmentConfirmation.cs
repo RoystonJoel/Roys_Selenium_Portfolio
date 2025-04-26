@@ -11,6 +11,7 @@ public class CHSAppointmentConfirmation : PageBase
     public CHSAppointmentConfirmation(IWebDriver driver) : base(driver)
     {
         _helper = new SeleniumHelper(driver);
+        _helper.wait().waitUntilVisableByID("comment");
     }
 
     public string facility()
@@ -20,14 +21,7 @@ public class CHSAppointmentConfirmation : PageBase
     
     public bool hospital_readmission()
     {
-        if (_helper.Gettext().ById("hospital_readmission").ToLower() == "yes")
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (_helper.Gettext().ById("hospital_readmission").ToLower() == "yes");
     }
     
     public string program()
