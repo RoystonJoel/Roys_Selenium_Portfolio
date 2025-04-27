@@ -2,10 +2,10 @@
 
 namespace Roys_Selenium_Portfolio;
 
-public class Wait
+public class WaitUntilVisable
 {
     private readonly WaitHelper waithelper;
-    public Wait(IWebDriver driver)
+    public WaitUntilVisable(IWebDriver driver)
     {
         waithelper = new  WaitHelper(driver);
     }
