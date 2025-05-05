@@ -45,6 +45,7 @@ namespace Roys_Selenium_Portfolio.Project_2___OrangeHRMLive;
         public void Submit()
         {
             _helper.click().ByClassName("oxd-button");
+            _helper.wait().UntilUrlContains("/web/index.php/dashboard/index");
         }
         
         
