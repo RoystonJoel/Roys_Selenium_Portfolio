@@ -66,10 +66,11 @@ namespace Roys_Selenium_Portfolio
             return new GetAttribute(_driver);
         }
 
-        public WaitUntilVisable wait()
+        public WaitHelper wait()
         {
-            return new WaitUntilVisable(_driver);
+            return new WaitHelper(_driver);
         }
+        
       
         public Click click()
         {

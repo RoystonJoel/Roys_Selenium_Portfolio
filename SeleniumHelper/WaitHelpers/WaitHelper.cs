@@ -6,30 +6,29 @@ using SeleniumExtras.WaitHelpers;
 public class WaitHelper
 {
     private readonly WebDriverWait _wait;
-    private readonly IWebDriver _driver;
 
     public WaitHelper(IWebDriver driver)
     {
-        _driver = driver;
-        _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
+        _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+
     }
     
-    public IWebElement WaitUntilVisible(By by)
+    public UntilVisible UntilVisible()
     {
-        return _wait.Until(ExpectedConditions.ElementIsVisible(by));
+        return new UntilVisible(_wait);
     }
 
-    public IWebElement WaitUntilClickable(By by)
+    public UntilClickable UntilClickable()
     {
-        return _wait.Until(ExpectedConditions.ElementToBeClickable(by));
+        return new UntilClickable(_wait);
     }
 
-    public bool WaitUntilTextToBePresentInElement(By by, string text)
+    public UntilTextToBePresentInElement UntilTextToBePresentInElement()
     {
-        return _wait.Until(ExpectedConditions.TextToBePresentInElementLocated(by, text));
+        return new UntilTextToBePresentInElement(_wait);
     }
 
-    public bool WaitUntilUrlContains(string url)
+    public bool UntilUrlContains(string url)
     {
         return _wait.Until(ExpectedConditions.UrlContains(url));
     }
