@@ -16,7 +16,12 @@ public class OrangeTestLogin : TestBase
         login.EnterUsername();
         login.EnterPassword();
         login.Submit();
-        Thread.Sleep(9000);
+
+        var url = login.GetDriver().Url;
+        url.Should().NotBeEmpty();
+        url.Should().Contain("/web/index.php/dashboard/index");
+        url.Should().NotBe("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        url.Should().NotBeNull();
     }
 
     [Fact]
