@@ -10,7 +10,7 @@ public class CHSAppointment : PageBase
     public CHSAppointment(IWebDriver driver) : base(driver)
     {
         _helper = new SeleniumHelper(driver);
-       _helper.wait().waitUntilVisableByID("combo_facility");
+       _helper.wait().UntilVisible().ByID("combo_facility");
     }
 
     public void choose_facility()

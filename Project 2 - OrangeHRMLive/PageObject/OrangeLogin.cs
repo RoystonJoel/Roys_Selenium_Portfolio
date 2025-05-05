@@ -12,7 +12,7 @@ namespace Roys_Selenium_Portfolio.Project_2___OrangeHRMLive;
         {
             _helper = new SeleniumHelper(driver);
             _helper.Visit("https://opensource-demo.orangehrmlive.com/");
-            _helper.wait().waitUntilVisableByName("password");
+            _helper.wait().UntilVisible().ByName("password");
         }
 
         public void EnterUsername()

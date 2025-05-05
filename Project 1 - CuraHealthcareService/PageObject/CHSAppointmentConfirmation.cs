@@ -11,7 +11,7 @@ public class CHSAppointmentConfirmation : PageBase
     public CHSAppointmentConfirmation(IWebDriver driver) : base(driver)
     {
         _helper = new SeleniumHelper(driver);
-        _helper.wait().waitUntilVisableByID("comment");
+        _helper.wait().UntilVisible().ByID("comment");
     }
 
     public string facility()
