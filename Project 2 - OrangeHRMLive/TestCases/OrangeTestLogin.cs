@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+﻿using FluentAssertions;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using Xunit.Abstractions;
 
 namespace Roys_Selenium_Portfolio.Project_2___OrangeHRMLive;
