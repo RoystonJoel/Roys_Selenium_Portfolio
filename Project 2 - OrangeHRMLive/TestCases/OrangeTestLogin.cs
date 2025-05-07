@@ -13,26 +13,44 @@ public class OrangeTestLogin : TestBase
     [Fact]
     public void correctLogin()
     {
-        var login = new OrangeLogin(_driver);
-        login.EnterUsername();
-        login.EnterPassword();
-        login.Submit();
+        try
+        {
+            var login = new OrangeLogin(_driver);
+            login.EnterUsername();
+            login.EnterPassword();
+            login.Submit();
+            login.waitSucessfulLogin();
 
-        var url = login.GetDriver().Url;
-        url.Should().NotBeEmpty();
-        url.Should().Contain("/web/index.php/dashboard/index");
-        url.Should().NotBe("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-        url.Should().NotBeNull();
+            var url = login.GetDriver().Url;
+            url.Should().NotBeEmpty();
+            url.Should().Contain("/web/index.php/dashboard/index");
+            url.Should().NotBe("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+            url.Should().NotBeNull();
+        }
+        catch (Exception e)
+        {
+            output.WriteLine(e.ToString());
+            Dispose();
+            throw;
+        }
     }
 
     [Fact]
     public void CustomLogin()
     {
-        initlizeSecretsOrangeHrm();
-        var login = new OrangeLogin(_driver);
-        login.EnterUsername(credentials.Username);
-        login.EnterPassword(credentials.Password);
-        login.Submit();
-        Thread.Sleep(9000);
+        try
+        {
+            initlizeSecretsOrangeHrm();
+            var login = new OrangeLogin(_driver);
+            login.EnterUsername(credentials.Username);
+            login.EnterPassword(credentials.Password);
+            login.Submit();
+            login.waitSucessfulLogin();
+        }
+        catch (Exception e)
+        {
+            output.WriteLine(e.ToString());
+            throw;
+        }
     }
 }
