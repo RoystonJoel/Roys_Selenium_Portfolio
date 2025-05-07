@@ -45,8 +45,17 @@ namespace Roys_Selenium_Portfolio.Project_2___OrangeHRMLive;
         public void Submit()
         {
             _helper.click().ByClassName("oxd-button");
+        }
+
+        public void waitSucessfulLogin()
+        {
             _helper.wait().UntilUrlContains("/web/index.php/dashboard/index");
         }
-        
-        
+
+        public string GetPageAlert()
+        {
+            _helper.wait().UntilVisible().ByName("password");
+            return _helper.JavaScriptExecutor<string>("return document.querySelectorAll(\"p.oxd-text\")[0].textContent");
+
+        }
     }
