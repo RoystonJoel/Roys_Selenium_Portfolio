@@ -53,4 +53,28 @@ public class OrangeTestLogin : TestBase
             throw;
         }
     }
+
+    [Fact]
+    public void IncorrectLogin()
+    {
+        try
+        {
+            var login = new OrangeLogin(_driver);
+            login.EnterUsername("Incorrect username");
+            login.EnterPassword("Incorrect password");
+            login.Submit();
+            
+            var url = login.GetDriver().Url;
+            url.Should().NotBeEmpty();
+            url.Should().NotBeNull();
+            url.Should().Contain("/web/index.php/auth/login");
+            output.WriteLine(login.GetPageAlert());
+            login.GetPageAlert().Should().Contain("Invalid credentials");
+        }
+        catch (Exception e)
+        {
+            output.WriteLine(e.ToString());
+            throw;
+        }
+    }
 }
