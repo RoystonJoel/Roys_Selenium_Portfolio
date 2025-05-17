@@ -56,7 +56,6 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 Dispose();
                 throw;
             }
-            Dispose();
         }
 
         [Fact]
@@ -93,7 +92,6 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 Dispose();
                 throw;
             }
-            Dispose();
         }
     }
 }

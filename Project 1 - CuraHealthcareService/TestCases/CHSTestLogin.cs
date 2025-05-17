@@ -48,8 +48,6 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 Dispose();
                 throw;
             }
-            
-            Dispose();
         }
 
         [Fact]
@@ -77,11 +75,8 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
             catch (Exception e)
             {
                 output.WriteLine(e.StackTrace);
-                Dispose();
                 throw;
             }
-            
-            Dispose();
         }
 
         [Fact]
@@ -108,11 +103,8 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
             catch (Exception e)
             {
                 output.WriteLine(e.StackTrace);
-                Dispose();
                 throw;
             }
-            
-            Dispose();
         }
     }
 }

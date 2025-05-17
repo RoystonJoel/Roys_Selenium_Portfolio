@@ -110,7 +110,6 @@ namespace Roys_Selenium_Portfolio
         
         public void Dispose()
         {
-            _driver.Quit();
             _driver.Dispose();  
         }
 
