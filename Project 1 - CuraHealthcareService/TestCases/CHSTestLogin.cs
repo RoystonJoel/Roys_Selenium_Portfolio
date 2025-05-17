@@ -44,8 +44,8 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                Dispose();
+                output.WriteLine($"Error in correct_login: {e.Message}");
+                output.WriteLine(e.StackTrace);
                 throw;
             }
         }
@@ -74,6 +74,7 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
             }
             catch (Exception e)
             {
+                output.WriteLine($"Error in incorrect_login_username: {e.Message}");
                 output.WriteLine(e.StackTrace);
                 throw;
             }
@@ -102,6 +103,7 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
             }
             catch (Exception e)
             {
+                output.WriteLine($"Error in incorrect_login_password: {e.Message}");
                 output.WriteLine(e.StackTrace);
                 throw;
             }

@@ -52,8 +52,8 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.StackTrace);
-                Dispose();
+                output.WriteLine($"Error in Appointment_Success: {e.Message}");
+                output.WriteLine(e.StackTrace);
                 throw;
             }
         }
@@ -88,8 +88,8 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.StackTrace);
-                Dispose();
+                output.WriteLine($"Error in Appointment_NoDate: {e.Message}");
+                output.WriteLine(e.StackTrace);
                 throw;
             }
         }
