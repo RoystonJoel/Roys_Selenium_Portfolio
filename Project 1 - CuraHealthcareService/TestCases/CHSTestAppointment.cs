@@ -1,7 +1,4 @@
-﻿using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
-using FluentAssertions;
-using System.Diagnostics;
+﻿using FluentAssertions;
 using Xunit.Abstractions;
 
 namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService

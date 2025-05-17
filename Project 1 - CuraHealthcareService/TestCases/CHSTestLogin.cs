@@ -1,16 +1,5 @@
-using System;
-using Xunit;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 using FluentAssertions;
-using System.Diagnostics;
 using Xunit.Abstractions;
-using System.Xml.Linq;
-using Microsoft.VisualBasic;
-using System.Buffers.Text;
-using OpenQA.Selenium.Internal;
-using Roys_Selenium_Portfolio;
 
 namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
 {

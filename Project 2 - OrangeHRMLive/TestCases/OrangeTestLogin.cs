@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using Xunit.Abstractions;
 
 namespace Roys_Selenium_Portfolio.Project_2___OrangeHRMLive;
@@ -22,6 +21,8 @@ public class OrangeTestLogin : TestBase
             login.waitSucessfulLogin();
 
             var url = login.GetDriver().Url;
+            login.QuiteAndDispose();
+
             url.Should().NotBeEmpty();
             url.Should().Contain("/web/index.php/dashboard/index");
             url.Should().NotBe("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
@@ -29,8 +30,8 @@ public class OrangeTestLogin : TestBase
         }
         catch (Exception e)
         {
-            output.WriteLine(e.ToString());
-            Dispose();
+            output.WriteLine($"Error in correctLogin: {e.Message}");
+            output.WriteLine(e.StackTrace);
             throw;
         }
     }
@@ -46,10 +47,12 @@ public class OrangeTestLogin : TestBase
             login.EnterPassword(credentials.Password);
             login.Submit();
             login.waitSucessfulLogin();
+            login.QuiteAndDispose();
         }
         catch (Exception e)
         {
-            output.WriteLine(e.ToString());
+            output.WriteLine($"Error in CustomLogin: {e.Message}");
+            output.WriteLine(e.StackTrace);
             throw;
         }
     }
@@ -70,10 +73,12 @@ public class OrangeTestLogin : TestBase
             url.Should().Contain("/web/index.php/auth/login");
             output.WriteLine(login.GetPageAlert());
             login.GetPageAlert().Should().Contain("Invalid credentials");
+            login.QuiteAndDispose();
         }
         catch (Exception e)
         {
-            output.WriteLine(e.ToString());
+            output.WriteLine($"Error in IncorrectLogin: {e.Message}");
+            output.WriteLine(e.StackTrace);
             throw;
         }
     }

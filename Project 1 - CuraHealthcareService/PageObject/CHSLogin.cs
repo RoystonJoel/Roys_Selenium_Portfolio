@@ -1,8 +1,5 @@
-﻿
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
-using Xunit.Abstractions;
+﻿using OpenQA.Selenium;
+
 
 namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
 {

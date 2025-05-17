@@ -1,7 +1,5 @@
-﻿using System.Runtime.InteropServices.JavaScript;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
+
 
 namespace Roys_Selenium_Portfolio;
 

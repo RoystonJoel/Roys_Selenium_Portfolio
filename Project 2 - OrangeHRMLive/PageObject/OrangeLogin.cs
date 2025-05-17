@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestPlatform.Utilities;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace Roys_Selenium_Portfolio.Project_2___OrangeHRMLive;
 
