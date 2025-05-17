@@ -32,13 +32,13 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 appointment.healthcare_Program(healthcare_Program);
                 appointment.visit_date(visit_date);
                 appointment.comment("Test comment");
-                string previousHtml = login.GetDriver().PageSource;
+                string previousHtml = login.PageSource();
                 appointment.book_appointment();
                 var appointment_confirmation = new CHSAppointmentConfirmation(appointment.GetDriver());
-                string currentHtml = login.GetDriver().PageSource;
-            
-            
+                string currentHtml = login.PageSource();
                 var url = appointment_confirmation.GetHelper().GetDriver().Url;
+                
+                
                 url.Should().NotBeEmpty();
                 url.Should().Contain("appointment.php#summary");
                 url.Should().NotBeNull();
@@ -48,7 +48,7 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 appointment_confirmation.hospital_readmission().Should().Be(hospital_readmission);
                 appointment_confirmation.program().ToLower().Should().Contain(healthcare_Program.Replace("radio_program_", ""));
                 appointment_confirmation.visit_date().Should().Contain(visit_date);
-
+                appointment_confirmation.QuiteAndDispose();
             }
             catch (Exception e)
             {
@@ -78,11 +78,13 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 appointment.comment("Test comment");
                 appointment.book_appointment();
                 
+                
                 output.WriteLine(appointment.isFieldInvalid().ToString());
                 output.WriteLine(appointment.validationMessage());
                 Assert.False(appointment.isFieldInvalid(), "The required field should be marked as invalid.");
                 // Note: The exact validation message text can vary slightly between browsers
                 Assert.NotEmpty(appointment.validationMessage());
+                appointment.QuiteAndDispose();
                 
             }
             catch (Exception e)

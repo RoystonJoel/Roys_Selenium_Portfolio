@@ -34,7 +34,9 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 login.submit();
                 Thread.Sleep(1000);
                 
-                var url = login.GetDriver().Url;
+                var url = login.Url();
+                login.QuiteAndDispose();
+                
                 url.Should().NotBeEmpty();
                 url.Should().Contain("/#appointment");
                 url.Should().NotBe("https://katalon-demo-cura.herokuapp.com/");
@@ -58,13 +60,14 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 var login = new CHSLogin(_driver);
                 login.enterusername("notJohnDoe");
                 login.enterpassword();
-                var previousHtml = _driver.PageSource;
+                var previousHtml = login.PageSource();
                 login.submit();
                 Thread.Sleep(1000);
                 
-                string currentHtml = login.GetDriver().PageSource;
-            
-                var url = login.GetDriver().Url;
+                string currentHtml = login.PageSource();
+                var url = login.Url();
+                login.QuiteAndDispose();
+                
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");
                 url.Should().NotBeNull();
@@ -89,13 +92,13 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 var login = new CHSLogin(_driver);
                 login.enterusername();
                 login.enterpassword("incorrectpassword");
-                var previousHtml = _driver.PageSource;
+                var previousHtml = login.PageSource();
                 login.submit();
                 Thread.Sleep(1000);
+                string currentHtml = login.PageSource();
+                var url = login.Url();
+                login.QuiteAndDispose();
                 
-                string currentHtml = login.GetDriver().PageSource;
-                
-                var url = login.GetDriver().Url;
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");
                 url.Should().NotBeNull();

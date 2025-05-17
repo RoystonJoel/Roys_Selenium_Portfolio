@@ -16,4 +16,20 @@ public class PageBase
     {
         return _helper.GetDriver();
     }
+    
+    public string PageSource()
+    {
+        return _helper.PageSource();
+    }
+
+    public string Url()
+    {
+        return _helper.Url();
+    }
+
+    public void QuiteAndDispose()
+    {
+        _helper.Quite();
+        _helper.Dispose();
+    }
 }

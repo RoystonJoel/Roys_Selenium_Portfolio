@@ -93,7 +93,21 @@ namespace Roys_Selenium_Portfolio
             _driver.Navigate().GoToUrl(Url);
         }
 
-        //closes the drivers windows, and closes the session
+        public string PageSource()
+        {
+            return _driver.PageSource;
+        }
+
+        public string Url()
+        {
+            return _driver.Url;
+        }
+
+        public void Quite()
+        {
+            _driver.Quit();
+        }
+        
         public void Dispose()
         {
             _driver.Quit();
