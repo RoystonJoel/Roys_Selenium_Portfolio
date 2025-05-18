@@ -26,9 +26,8 @@ public class PageBase
         return _helper.Url();
     }
 
-    public void QuiteAndDispose()
+    public void Quit()
     {
-        _helper.Quite();
-        _helper.Dispose();
+        _helper.Quit();
     }
 }

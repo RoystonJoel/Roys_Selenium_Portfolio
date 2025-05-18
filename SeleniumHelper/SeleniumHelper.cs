@@ -93,14 +93,9 @@ namespace Roys_Selenium_Portfolio
             return _driver.Url;
         }
 
-        public void Quite()
+        public void Quit()
         {
             _driver.Quit();
-        }
-        
-        public void Dispose()
-        {
-            _driver.Dispose();  
         }
 
         public IWebDriver GetDriver()

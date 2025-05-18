@@ -24,7 +24,7 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 Thread.Sleep(1000);
                 
                 var url = login.Url();
-                login.QuiteAndDispose();
+                login.Quit();
                 
                 url.Should().NotBeEmpty();
                 url.Should().Contain("/#appointment");
@@ -53,7 +53,7 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 
                 string currentHtml = login.PageSource();
                 var url = login.Url();
-                login.QuiteAndDispose();
+                login.Quit();
                 
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");
@@ -82,7 +82,7 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 Thread.Sleep(1000);
                 string currentHtml = login.PageSource();
                 var url = login.Url();
-                login.QuiteAndDispose();
+                login.Quit();
                 
                 url.Should().NotBeEmpty();
                 url.Should().Contain("profile.php#login");

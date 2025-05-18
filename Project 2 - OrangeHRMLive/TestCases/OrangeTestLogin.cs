@@ -21,7 +21,7 @@ public class OrangeTestLogin : TestBase
             login.waitSucessfulLogin();
 
             var url = login.GetDriver().Url;
-            login.QuiteAndDispose();
+            login.Quit();
 
             url.Should().NotBeEmpty();
             url.Should().Contain("/web/index.php/dashboard/index");
@@ -47,7 +47,7 @@ public class OrangeTestLogin : TestBase
             login.EnterPassword(credentials.Password);
             login.Submit();
             login.waitSucessfulLogin();
-            login.QuiteAndDispose();
+            login.Quit();
         }
         catch (Exception e)
         {
@@ -73,7 +73,7 @@ public class OrangeTestLogin : TestBase
             url.Should().Contain("/web/index.php/auth/login");
             output.WriteLine(login.GetPageAlert());
             login.GetPageAlert().Should().Contain("Invalid credentials");
-            login.QuiteAndDispose();
+            login.Quit();
         }
         catch (Exception e)
         {

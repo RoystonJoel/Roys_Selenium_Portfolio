@@ -45,7 +45,7 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 appointment_confirmation.hospital_readmission().Should().Be(hospital_readmission);
                 appointment_confirmation.program().ToLower().Should().Contain(healthcare_Program.Replace("radio_program_", ""));
                 appointment_confirmation.visit_date().Should().Contain(visit_date);
-                appointment_confirmation.QuiteAndDispose();
+                appointment_confirmation.Quit();
             }
             catch (Exception e)
             {
@@ -80,7 +80,7 @@ namespace Roys_Selenium_Portfolio.Project_1___CuraHealthcareService
                 Assert.False(appointment.isFieldInvalid(), "The required field should be marked as invalid.");
                 // Note: The exact validation message text can vary slightly between browsers
                 Assert.NotEmpty(appointment.validationMessage());
-                appointment.QuiteAndDispose();
+                appointment.Quit();
                 
             }
             catch (Exception e)
