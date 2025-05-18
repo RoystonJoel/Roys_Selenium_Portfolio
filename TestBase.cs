@@ -1,6 +1,5 @@
 ﻿namespace Roys_Selenium_Portfolio;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 using Xunit.Abstractions;
 
 public class TestBase : IDisposable
@@ -8,8 +7,6 @@ public class TestBase : IDisposable
     protected  readonly ITestOutputHelper output;
     protected  readonly ChromeOptions options;
     protected  readonly ChromeDriver _driver;
-    protected  readonly WebDriverWait wait;
-    protected  readonly string[] scopes;
     protected  OrangeHrmCredentials credentials;
     
     public TestBase(ITestOutputHelper output)
