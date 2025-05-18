@@ -14,6 +14,13 @@ namespace Roys_Selenium_Portfolio.Project_2___OrangeHRMLive;
             _helper.wait().UntilVisible().ByName("password");
         }
 
+        public void AutoLogin()
+        {
+            EnterUsername();
+            EnterPassword();
+            Submit();
+        }
+
         public void EnterUsername()
         {
             _helper.sendkeys().ByName(GetUsername(), "username");
