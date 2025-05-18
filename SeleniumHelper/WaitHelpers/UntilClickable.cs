@@ -6,20 +6,20 @@ namespace Roys_Selenium_Portfolio;
 
 public class UntilClickable
 {
-    private readonly WebDriverWait _wait;
+    private readonly WaitInteractions _waitInteractions;
     
     public UntilClickable(WebDriverWait wait)
     {
-        _wait = wait;
+        _waitInteractions = new WaitInteractions(wait);
     }
 
     public void ByID(string id)
     { 
-        _wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(id)));
+        _waitInteractions.UntilClickable(By.Id(id));
     }
 
     public void ByName(string name)
     {
-        _wait.Until(ExpectedConditions.ElementToBeClickable(By.Name(name)));
+        _waitInteractions.UntilClickable(By.Name(name));
     }
 }

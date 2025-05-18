@@ -6,19 +6,19 @@ namespace Roys_Selenium_Portfolio;
 
 public class UntilTextToBePresentInElement
 {
-    private readonly WebDriverWait _wait;
+    private readonly WaitInteractions _waitInteractions;
     public UntilTextToBePresentInElement(WebDriverWait wait)
     {
-        _wait = wait;
+        _waitInteractions = new WaitInteractions(wait);
     }
 
     public bool ByID(string id, string text)
     {
-        return _wait.Until(ExpectedConditions.TextToBePresentInElementLocated(By.Id(id), text));
+        return _waitInteractions.TextToBePresentInElementLocated(By.Id(id), text);
     }
 
     public bool  ByName(string name, string text)
     {
-        return _wait.Until(ExpectedConditions.TextToBePresentInElementLocated(By.Name(name), text));
+        return _waitInteractions.TextToBePresentInElementLocated(By.Name(name), text);
     }
 }

@@ -6,20 +6,25 @@ namespace Roys_Selenium_Portfolio;
 
 public class UntilVisible
 {
-    private readonly WebDriverWait _wait;
+    private readonly WaitInteractions _waitInteractions;
     
     public UntilVisible(WebDriverWait wait)
     {
-        _wait = wait;
+        _waitInteractions = new WaitInteractions(wait);
     }
 
     public void ByID(string id)
     {
-        _wait.Until(ExpectedConditions.ElementIsVisible(By.Id(id)));
+        _waitInteractions.UntilVisible(By.Id(id));
     }
 
     public void ByName(string name)
     {
-        _wait.Until(ExpectedConditions.ElementIsVisible(By.Name(name)));
+        _waitInteractions.UntilVisible(By.Name(name));
+    }
+    
+    public void ByClassName(string classname)
+    {
+        _waitInteractions.UntilVisible(By.ClassName(classname));
     }
 }
