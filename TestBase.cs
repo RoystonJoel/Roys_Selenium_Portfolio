@@ -5,7 +5,7 @@ using Xunit.Abstractions;
 public class TestBase : IDisposable
 {
     protected  readonly ITestOutputHelper output;
-    protected  readonly ChromeOptions options;
+    private  readonly ChromeOptions options;
     protected  readonly ChromeDriver _driver;
     protected  OrangeHrmCredentials credentials;
     
