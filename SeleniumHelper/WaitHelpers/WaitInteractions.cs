@@ -15,7 +15,7 @@ public class WaitInteractions
 
     //waitUntil takes a Func<IWebDriver, TResult?> as a parameter, which is exactly what _wait.Until() expects.
     //TResult : notnull constraint ensures that the result is not null.
-    public TResult WaitUntil<TResult>(Func<IWebDriver, TResult?> condition) where TResult : notnull
+    private TResult WaitUntil<TResult>(Func<IWebDriver, TResult?> condition) where TResult : notnull
     { 
         return _wait.Until(condition);
     }
