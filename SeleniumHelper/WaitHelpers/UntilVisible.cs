@@ -27,4 +27,9 @@ public class UntilVisible
     {
         _waitInteractions.UntilVisible(By.ClassName(classname));
     }
+
+    public void ByXpath(string xpath)
+    {
+        _waitInteractions.UntilVisible(By.XPath(xpath));
+    }
 }
