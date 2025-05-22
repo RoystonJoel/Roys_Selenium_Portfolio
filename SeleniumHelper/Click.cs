@@ -31,6 +31,11 @@ namespace Roys_Selenium_Portfolio
         {
             _elementInteraction.Click(By.ClassName(classname));
         }
+
+        public void ByCssSelector(string cssselector)
+        {
+            _elementInteraction.Click(By.CssSelector(cssselector));
+        }
         
     }
 }
