@@ -41,6 +41,11 @@ namespace Roys_Selenium_Portfolio
             return (T)((IJavaScriptExecutor)_driver).ExecuteScript(javascript);
         }
 
+        public void JavaScriptExecutor(string javascript)
+        {
+            ((IJavaScriptExecutor)_driver).ExecuteScript(javascript);
+        }
+
         public SendKeysFunctions sendkeys() 
         {
             return new SendKeysFunctions(_driver);
