@@ -16,4 +16,9 @@ public class Dropdown
     {
         return new Select(_elementInteraction.Select(By.Id(id)));
     }
+
+    public Select ByXpath(string xpath)
+    {
+        return new Select(_elementInteraction.Select(By.XPath(xpath)));
+    }
 }
