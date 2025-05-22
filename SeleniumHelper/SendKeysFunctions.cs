@@ -17,8 +17,7 @@ namespace Roys_Selenium_Portfolio
         {
             _elementInteraction.SendKeys(By.XPath(xpath),text);
         }
-
-        //clicks on anything using the elements ID. Uses wait helpers incase page doesn't respond immediately
+        
         public void ById(string text, string id)
         {
             _elementInteraction.SendKeys(By.Id(id),text);
