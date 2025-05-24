@@ -18,6 +18,11 @@ public class ElementInteraction
         return _driver.FindElement(by);
     }
 
+    public IReadOnlyCollection<IWebElement> FindElements(By locator)
+    {
+        return _driver.FindElements(locator);
+    }
+
     public void Click(By by)
     {
         FindElement(by).Click();
