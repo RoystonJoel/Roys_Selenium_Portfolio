@@ -32,4 +32,9 @@ public class UntilVisible
     {
         _waitInteractions.UntilVisible(By.XPath(xpath));
     }
+
+    public void ByCssSelector(string cssSelector)
+    {
+        _waitInteractions.UntilVisible(By.CssSelector(cssSelector));
+    }
 }
