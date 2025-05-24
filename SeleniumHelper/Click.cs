@@ -37,5 +37,20 @@ namespace Roys_Selenium_Portfolio
             _elementInteraction.Click(By.CssSelector(cssselector));
         }
         
+        public void ByCssSelector(string cssselector, int elementIndex)
+        {
+            By arrowLocator = By.CssSelector(cssselector);
+            IReadOnlyCollection<IWebElement> allElements = _elementInteraction.FindElements(arrowLocator);
+            if (elementIndex >= 0 && elementIndex < allElements.Count)
+            {
+                IWebElement targetElement = allElements.ElementAt(elementIndex); // Or use allElements.ToList()[elementIndex]
+                targetElement.Click();
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException($"Cannot click element at index {elementIndex}. Only {allElements.Count} elements found for locator {arrowLocator}");
+            }
+        }
+        
     }
 }
