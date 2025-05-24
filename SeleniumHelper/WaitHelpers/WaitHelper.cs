@@ -12,6 +12,11 @@ public class WaitHelper
         _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
 
     }
+
+    public WebDriverWait GetWait()
+    {
+        return _wait;
+    }
     
     public UntilVisible UntilVisible()
     {
