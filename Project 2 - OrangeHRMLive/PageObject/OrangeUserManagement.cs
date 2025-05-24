@@ -31,9 +31,27 @@ public class OrangeUserManagement : PageBase
         _helper.JavaScriptExecutor("return document.querySelectorAll('input.oxd-input')[1].value = '"+username+"'");
     }
 
-    public void SelectUserRole()
+    public void SelectUserRole(string optionTextToSelect)
     {
-        _helper.dropdown().ByXpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div/div[1]").SelectByText("Admin");
+        _helper.click().ByCssSelector("i.oxd-icon.bi-caret-down-fill.oxd-select-text--arrow",0);
+        //_helper.click().ByXpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div[1]/div[2]/i");
+        IWebElement listbox = _helper.GetElement(By.CssSelector("div.oxd-select-dropdown[role='listbox']"));
+        IReadOnlyCollection<IWebElement> options = listbox.FindElements(By.CssSelector("div[role='option']"));
+        bool optionFoundAndClicked = false;
+        foreach (IWebElement option in options)
+        {
+            string optionText = option.Text.Trim();
+            if (optionText.Equals(optionTextToSelect, StringComparison.OrdinalIgnoreCase))
+            {
+                option.Click();
+                optionFoundAndClicked = true;
+                break;
+            }
+        }
+        if (!optionFoundAndClicked)
+        {
+            throw new NoSuchElementException($"Option with text '{optionTextToSelect}' not found in the dropdown.");
+        }
     }
 
     public void SearchEmployeeName()
