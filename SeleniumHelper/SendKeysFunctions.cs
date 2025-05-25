@@ -32,6 +32,11 @@ namespace Roys_Selenium_Portfolio
         {
             _elementInteraction.SendKeys(By.ClassName(classname),text);
         }
+        
+        public void ByCssSelector(string text, string cssselector,int elementIndex)
+        {
+            _elementInteraction.IndexLocator(By.CssSelector(cssselector),elementIndex).SendKeys(text);
+        }
 
         public void ByName(string text, string name)
         {
