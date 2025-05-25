@@ -37,4 +37,15 @@ public class UntilVisible
     {
         _waitInteractions.UntilVisible(By.CssSelector(cssSelector));
     }
+    
+    public void ByCssSelector(string cssSelector, int elementIndex)
+    {
+        IWebElement element = _waitInteractions.UntilElementAtIndexIsPresent(By.CssSelector(cssSelector), elementIndex);
+        _waitInteractions.WaitUntil<IWebElement>(driver => {
+            if (element.Displayed) {
+                return element;
+            }
+            return null;
+        });
+    }
 }
