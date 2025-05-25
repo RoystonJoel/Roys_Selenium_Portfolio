@@ -15,7 +15,7 @@ public class WaitInteractions
 
     //waitUntil takes a Func<IWebDriver, TResult?> as a parameter, which is exactly what _wait.Until() expects.
     //TResult : notnull constraint ensures that the result is not null.
-    private TResult WaitUntil<TResult>(Func<IWebDriver, TResult?> condition) where TResult : notnull
+    public TResult WaitUntil<TResult>(Func<IWebDriver, TResult?> condition) where TResult : notnull
     { 
         return _wait.Until(condition);
     }
@@ -33,5 +33,16 @@ public class WaitInteractions
     public void UntilClickable(By by)
     {
         WaitUntil(ExpectedConditions.ElementToBeClickable(by));
+    }
+    
+    public IWebElement UntilElementAtIndexIsPresent(By by, int elementIndex)
+    {
+        // Wait until there are enough elements to access the desired index, and return that element.
+        return WaitUntil(driver =>
+        {
+            //return new ElementInteraction(driver).UntilElementAtIndex(by,elementIndex);
+            var elements = driver.FindElements(by);
+            return elements.ElementAtOrDefault(elementIndex); // <-- Used here
+        });
     }
 }
