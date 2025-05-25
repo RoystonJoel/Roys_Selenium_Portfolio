@@ -28,7 +28,7 @@ public class OrangeUserManagement : PageBase
 
     public void SearchUserName(string username)
     {
-        _helper.JavaScriptExecutor("return document.querySelectorAll('input.oxd-input')[1].value = '"+username+"'");
+        _helper.sendkeys().ByCssSelector(username,"input.oxd-input.oxd-input--active",1);
     }
 
     public void SelectUserRole(string optionTextToSelect)
