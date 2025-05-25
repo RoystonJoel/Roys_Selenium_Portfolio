@@ -34,7 +34,6 @@ public class OrangeUserManagement : PageBase
     public void SelectUserRole(string optionTextToSelect)
     {
         _helper.click().ByCssSelector("i.oxd-icon.bi-caret-down-fill.oxd-select-text--arrow",0);
-        //_helper.click().ByXpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div[1]/div[2]/i");
         IWebElement listbox = _helper.GetElement(By.CssSelector("div.oxd-select-dropdown[role='listbox']"));
         IReadOnlyCollection<IWebElement> options = listbox.FindElements(By.CssSelector("div[role='option']"));
         bool optionFoundAndClicked = false;
@@ -71,7 +70,8 @@ public class OrangeUserManagement : PageBase
 
     public void Search()
     {
-        _helper.wait().UntilVisible().ByXpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div[1]/div/div[2]/div");
+        //_helper.wait().UntilVisible().ByXpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div[1]/div/div[2]/div");
+        Thread.Sleep(9000);
         _helper.click().ByXpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]");
     }
 
