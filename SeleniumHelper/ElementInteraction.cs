@@ -53,17 +53,13 @@ public class ElementInteraction
         return new SelectElement(FindElement(by));
     }
 
-    public IWebElement IndexLocator(By arrowLocator, int elementIndex)
+    public IWebElement LocateElementAtIndex(By by, int elementIndex)
     {
-        IReadOnlyCollection<IWebElement> allElements = FindElements(arrowLocator);
+        IReadOnlyCollection<IWebElement> allElements = FindElements(by);
         if (elementIndex >= 0 && elementIndex < allElements.Count)
         {
              return allElements.ElementAt(elementIndex); // Or use allElements.ToList()[elementIndex]
         }
-        else
-        {
-            throw new ArgumentOutOfRangeException($"Cannot click element at index {elementIndex}. Only {allElements.Count} elements found for locator {arrowLocator}");
-        }
+        throw new ArgumentOutOfRangeException($"Cannot click element at index {elementIndex}. Only {allElements.Count} elements found for locator {by}");
     }
-    
 }
