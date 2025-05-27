@@ -24,7 +24,6 @@ public class OrangeUserManagement : PageBase
             _helper.Visit("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
         }
         _helper.wait().UntilVisible().ByCssSelector("input.oxd-input.oxd-input--active",1);
-        //_helper.wait().UntilVisible().ByXpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input");
     }
 
     public void SearchUserName(string username)
