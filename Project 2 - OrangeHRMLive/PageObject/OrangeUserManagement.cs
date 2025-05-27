@@ -39,9 +39,15 @@ public class OrangeUserManagement : PageBase
         SelectFromDropdown(options, userrole);
     }
 
-    public void SearchEmployeeName()
+    public void SearchEmployeeName(string firstname, string middlename, string lastname)
     {
-        
+        string firstlast = firstname+" "+lastname;
+        string fullname = firstname+" "+middlename+" "+lastname;
+        _helper.sendkeys().ByCssSelector(firstlast,"div.oxd-autocomplete-text-input input[placeholder='Type for hints...']",0);
+        _helper.wait().UntilTextToBePresentInElement().ByCssSelector("div.oxd-autocomplete-dropdown[role='listbox']",fullname,0);
+        IWebElement listbox = _helper.GetElement(By.CssSelector("div.oxd-autocomplete-dropdown[role='listbox']"));
+        IReadOnlyCollection<IWebElement> options = listbox.FindElements(By.CssSelector("div[role='option']"));
+        SelectFromDropdown(options, fullname);
     }
 
     public void SelectStatus()
