@@ -78,6 +78,9 @@ public class OrangeHrmCredentials
     // but matching case is good practice or use [JsonPropertyName("json_key")] attribute)
     public string Username { get; set; }
     public string Password { get; set; }
+    public string firstname { get; set; }
+    public string middlename { get; set; }
+    public string lastname { get; set; }
 }
 
 public class SecretsConfig
