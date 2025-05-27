@@ -79,7 +79,7 @@ public class OrangeUserManagement : PageBase
 
     public void Reset()
     {
-        
+        _helper.click().ByCssSelector("button.oxd-button.oxd-button--medium.oxd-button--ghost");
     }
 
     public void Search()
