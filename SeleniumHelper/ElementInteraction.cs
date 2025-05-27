@@ -60,6 +60,6 @@ public class ElementInteraction
         {
              return allElements.ElementAt(elementIndex); // Or use allElements.ToList()[elementIndex]
         }
-        throw new ArgumentOutOfRangeException($"Cannot click element at index {elementIndex}. Only {allElements.Count} elements found for locator {by}");
+        throw new ArgumentOutOfRangeException($"Cannot locate element at index {elementIndex}. Only {allElements.Count} elements found for locator {by}");
     }
 }
