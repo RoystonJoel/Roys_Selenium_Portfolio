@@ -49,8 +49,16 @@ public class OrangeUserManagement : PageBase
         IReadOnlyCollection<IWebElement> options = listbox.FindElements(By.CssSelector("div[role='option']"));
         SelectFromDropdown(options, fullname);
     }
+    
+    public void SelectStatus(string status)
+    {
+        _helper.click().ByCssSelector("i.oxd-icon.bi-caret-down-fill.oxd-select-text--arrow",1);
+        IWebElement listbox = _helper.GetElement(By.CssSelector("div.oxd-select-dropdown[role='listbox']"));
+        IReadOnlyCollection<IWebElement> options = listbox.FindElements(By.CssSelector("div[role='option']"));
+        SelectFromDropdown(options, status);
+    }
 
-    public void SelectStatus()
+    private void SelectFromDropdown(IReadOnlyCollection<IWebElement> options, string optionTextToSelect)
     {
         
     }
