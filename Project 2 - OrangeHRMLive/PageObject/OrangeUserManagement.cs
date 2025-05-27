@@ -31,26 +31,12 @@ public class OrangeUserManagement : PageBase
         _helper.sendkeys().ByCssSelector(username,"input.oxd-input.oxd-input--active",1);
     }
 
-    public void SelectUserRole(string optionTextToSelect)
+    public void SelectUserRole(string userrole)
     {
         _helper.click().ByCssSelector("i.oxd-icon.bi-caret-down-fill.oxd-select-text--arrow",0);
         IWebElement listbox = _helper.GetElement(By.CssSelector("div.oxd-select-dropdown[role='listbox']"));
         IReadOnlyCollection<IWebElement> options = listbox.FindElements(By.CssSelector("div[role='option']"));
-        bool optionFoundAndClicked = false;
-        foreach (IWebElement option in options)
-        {
-            string optionText = option.Text.Trim();
-            if (optionText.Equals(optionTextToSelect, StringComparison.OrdinalIgnoreCase))
-            {
-                option.Click();
-                optionFoundAndClicked = true;
-                break;
-            }
-        }
-        if (!optionFoundAndClicked)
-        {
-            throw new NoSuchElementException($"Option with text '{optionTextToSelect}' not found in the dropdown.");
-        }
+        SelectFromDropdown(options, userrole);
     }
 
     public void SearchEmployeeName()
