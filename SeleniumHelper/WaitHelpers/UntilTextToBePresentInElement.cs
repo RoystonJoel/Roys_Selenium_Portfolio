@@ -21,4 +21,20 @@ public class UntilTextToBePresentInElement
     {
         return _waitInteractions.TextToBePresentInElementLocated(By.Name(name), text);
     }
+
+    public bool ByCssSelector(string cssSelector, string text)
+    {
+        return _waitInteractions.TextToBePresentInElementLocated(By.CssSelector(cssSelector),text);
+    }
+    
+    public void ByCssSelector(string cssSelector, string text, int elementIndex)
+    {
+        IWebElement element = _waitInteractions.UntilElementAtIndexIsPresent(By.CssSelector(cssSelector), elementIndex);
+        _waitInteractions.WaitUntil<IWebElement>(driver => {
+            if (element.Text.Contains(text)) {
+                return element;
+            }
+            return null;
+        });
+    }
 }
