@@ -13,7 +13,7 @@ public class OrangeUserManagement : PageBase
         _helper.wait().UntilVisible().ByClassName("oxd-main-menu-item");
         try
         {
-            _helper.click().ByXpath("/html/body/div/div[1]/div[1]/aside/nav/div[2]/ul/li[1]/a");
+            _helper.click().ByCssSelector("a.oxd-main-menu-item",0);
         }
         catch (Exception e)
         {
@@ -71,9 +71,7 @@ public class OrangeUserManagement : PageBase
 
     public void Search()
     {
-        //_helper.wait().UntilVisible().ByXpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div[1]/div/div[2]/div");
-        Thread.Sleep(9000);
-        _helper.click().ByXpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]");
+        _helper.click().ByCssSelector("button.oxd-button.oxd-button--medium.oxd-button--secondary.orangehrm-left-space",0);
     }
 
     public void AddUser()
