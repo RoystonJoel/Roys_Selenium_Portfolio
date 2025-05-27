@@ -60,7 +60,21 @@ public class OrangeUserManagement : PageBase
 
     private void SelectFromDropdown(IReadOnlyCollection<IWebElement> options, string optionTextToSelect)
     {
-        
+        bool optionFoundAndClicked = false;
+        foreach (IWebElement option in options)
+        {
+            string optionText = option.Text.Trim();
+            if (optionText.Equals(optionTextToSelect, StringComparison.OrdinalIgnoreCase))
+            {
+                option.Click();
+                optionFoundAndClicked = true;
+                break;
+            }
+        }
+        if (!optionFoundAndClicked)
+        {
+            throw new NoSuchElementException($"Option with text '{optionTextToSelect}' not found in the dropdown.");
+        }
     }
 
     public void Reset()
