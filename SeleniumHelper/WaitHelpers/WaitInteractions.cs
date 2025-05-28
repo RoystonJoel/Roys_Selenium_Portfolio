@@ -37,12 +37,19 @@ public class WaitInteractions
     
     public IWebElement UntilElementAtIndexIsPresent(By by, int elementIndex)
     {
-        // Wait until there are enough elements to access the desired index, and return that element.
-        return WaitUntil(driver =>
+        try
         {
-            //return new ElementInteraction(driver).UntilElementAtIndex(by,elementIndex);
-            var elements = driver.FindElements(by);
-            return elements.ElementAtOrDefault(elementIndex); // <-- Used here
-        });
+            // Wait until there are enough elements to access the desired index, and return that element.
+            return WaitUntil(driver =>
+            {
+                //return new ElementInteraction(driver).UntilElementAtIndex(by,elementIndex);
+                var allElements = driver.FindElements(by);
+                return allElements.ElementAtOrDefault(elementIndex); // <-- Used here
+            });
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            throw new ArgumentOutOfRangeException($"Cannot locate element at index {elementIndex} at: {by}");
+        }
     }
 }
