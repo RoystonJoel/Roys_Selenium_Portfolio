@@ -15,42 +15,72 @@ public class ElementInteraction
 
     public IWebElement FindElement(By by)
     {
-        return _driver.FindElement(by);
+        try {return _driver.FindElement(by);}
+        catch (Exception e)
+        {throw new Exception($"Could not find element at: {by}");}
     }
 
-    public IReadOnlyCollection<IWebElement> FindElements(By locator)
+    public IReadOnlyCollection<IWebElement> FindElements(By by)
     {
-        return _driver.FindElements(locator);
+        try {return _driver.FindElements(by);}
+        catch  (Exception e)
+        {throw new Exception($"Could not find element's at: {by}");}
     }
 
     public void Click(By by)
     {
-        FindElement(by).Click();
+        try {FindElement(by).Click();}
+        catch  (Exception e)
+        {throw new Exception($"Unable to click element at: {by}");}
     }
 
     public void SendKeys(By by, string text)
     {
-        FindElement(by).SendKeys(text);
+        try {FindElement(by).SendKeys(text);}
+        catch  (Exception e)
+        {throw new Exception($"Unable to send keys to element at: {by}");}
     }
 
     public string GetAttribute(By by, string attributeName)
     {
-        return FindElement(by).GetAttribute(attributeName);
+        try
+        {
+            var attribute = FindElement(by).GetAttribute(attributeName);
+            if (attribute == null)
+            {
+                throw new Exception($"attribute came back as NULL at: {by}");
+            }
+            return attribute;
+        } catch  (Exception e)
+        {throw new Exception($"Unable to get attribute from element at: {by}");}
     }
 
     public string GetText(By by)
     {
-        return FindElement(by).Text;
+        try
+        {
+            var text = FindElement(by).Text;
+            if (text == null)
+            {
+                throw new Exception($"text came back as NULL at: {by}");
+            }
+            return text;
+        } catch  (Exception e)
+        {throw new Exception($"Unable to get text from element at: {by}");}
     }
 
     public bool IsSelected(By by)
     {
-        return FindElement(by).Selected;
+        try {return FindElement(by).Selected;}
+        catch  (Exception e)
+        {throw new Exception($"Unable to see if element was selected or not at: {by}");}
     }
 
     public SelectElement Select(By by)
     {
-        return new SelectElement(FindElement(by));
+        try {return new SelectElement(FindElement(by));}
+        catch  (Exception e)
+        {throw new Exception($"Unable to select element at: {by}");}
     }
 
     public IWebElement LocateElementAtIndex(By by, int elementIndex)
