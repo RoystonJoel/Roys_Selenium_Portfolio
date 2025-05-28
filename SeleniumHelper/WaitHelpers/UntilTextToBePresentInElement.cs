@@ -30,11 +30,21 @@ public class UntilTextToBePresentInElement
     public void ByCssSelector(string cssSelector, string text, int elementIndex)
     {
         IWebElement element = _waitInteractions.UntilElementAtIndexIsPresent(By.CssSelector(cssSelector), elementIndex);
-        _waitInteractions.WaitUntil<IWebElement>(driver => {
-            if (element.Text.Contains(text)) {
-                return element;
-            }
-            return null;
-        });
+        try
+        {
+            _waitInteractions.WaitUntil<IWebElement>(driver =>
+            {
+                if (element.Text.Contains(text))
+                {
+                    return element;
+                }
+                return null;
+            });
+        }
+        catch (Exception e)
+        {
+            throw new Exception($"string in element does not contain sequence of characters from expected string. Element: {element.Text} expected: {text}.... {e.Message}");
+        }
+        
     }
 }
